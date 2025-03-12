@@ -3,6 +3,7 @@
 @theme {
   --color-primary: #fb4b0b;
   --color-primary-accent: #fcece6;
+  --color-circles: #cfcfcf;
   --color-side-bar: #f5f5f5;
   --color-side-bar-dark: #5e5e5e;
   --color-sidebar-buttons: #d9d9d9;
@@ -23,4 +24,26 @@
 
 .font-leckerli {
   font-family: var(--font-leckerli);
+}
+
+.step-circle {
+  background: linear-gradient(to bottom, #fb4b0b, #f64803);
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.3),
+    inset 0px -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.step-button {
+  background: linear-gradient(to bottom, #fb4b0b, #f64803);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.3),
+    inset 0px -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.step-button:active {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0px 2px 3px rgba(255, 255, 255, 0.3),
+    inset 0px -2px 3px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
 }
