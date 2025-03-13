@@ -1,4 +1,5 @@
 import GetStartedButton from "../getStartedButton";
+import Rizz from "./rizzAnimation";
 
 export default function DesktopHow() {
   return (
@@ -36,8 +37,8 @@ export default function DesktopHow() {
         </div>
         <div className="w-5/6 mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">
-            Let <span className="text-primary font-leckerli">Rizz</span> Work
-            Its Magic
+            Let <Rizz />
+            Work Its Magic
           </h3>
           <p className="text-gray-600 text-center">
             Our advanced AI tailors a profesional cover letter just for you.

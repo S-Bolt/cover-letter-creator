@@ -32,7 +32,6 @@ export default function Features() {
               alt="Cover Letter Rizz"
               width={100}
               height={100}
-              objectFit="contain"
               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full h-auto"
             />
           </div>
@@ -51,7 +50,6 @@ export default function Features() {
               alt="Cover Letter Rizz"
               width={100}
               height={100}
-              objectFit="contain"
               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full h-auto"
             />
           </div>

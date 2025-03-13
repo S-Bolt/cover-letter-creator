@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import GetStartedButton from "@/components/getStartedButton";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -24,8 +26,34 @@ export default function Hero() {
             Welcome to
           </h1>
           <h2 className="text-3xl md:text-5xl xl:text-6xl leading-relaxed md:leading-snug mb-2">
-            <span className="font-serif">Cover Letter&nbsp;</span>
-            <span className="font-leckerli text-primary">Rizz</span>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { staggerChildren: 0.5 },
+                },
+              }}
+            >
+              <motion.span
+                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                className="font-serif"
+              >
+                Cover Letter&nbsp;
+              </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, x: -30 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                className="font-leckerli text-primary"
+              >
+                Rizz
+              </motion.span>
+            </motion.div>
           </h2>
           <p className="text-sm sm:text-base md:text-2xl lg:text-3xl text-black mb-4">
             Your solution to <span className="text-primary">quickly</span>{" "}

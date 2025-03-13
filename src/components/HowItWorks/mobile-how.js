@@ -1,4 +1,5 @@
 import GetStartedButton from "../getStartedButton";
+import Rizz from "./rizzAnimation";
 
 export default function MobileHow() {
   return (
@@ -32,8 +33,8 @@ export default function MobileHow() {
         </div>
         <div>
           <h3 className="text-lg font-semibold text-center">
-            Let <span className="text-primary font-leckerli ">Rizz</span> Work
-            Its Magic
+            Let <Rizz />
+            Work Its Magic
           </h3>
           <p className="text-gray-600 text-center">
             Our advanced AI tailors a profesional cover letter just for you.
