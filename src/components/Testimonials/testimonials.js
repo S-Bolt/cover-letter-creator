@@ -4,7 +4,7 @@ import TestimonialCards from "./testimonialCards";
 
 export default function Testimonials() {
   return (
-    <div className="m-2 text-center ">
+    <div className="m-4 text-center ">
       <div className="text-2xl font-bold md:text-3xl md:mb-4">
         What our customers say
       </div>

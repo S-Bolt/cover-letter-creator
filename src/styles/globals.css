@@ -9,6 +9,62 @@
   --color-sidebar-buttons: #d9d9d9;
   --color-background: #ffffff;
   --color-background-dark: #212224;
+
+  --color-text: #000000;
+  --color-text-black: #000;
+  --color-text-dark: #ffffff;
+}
+
+/* Apply Tailwind-style utility behavior */
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.dark .bg-background {
+  background-color: var(--color-background-dark);
+}
+
+/* Text Colors */
+.text-default {
+  color: var(--color-text);
+}
+
+.dark .text-default {
+  color: var(--color-text-dark);
+}
+
+.bg-circles {
+  background-color: var(--color-circles);
+}
+
+.dark .bg-circles {
+  background-color: var(--color-primary);
+}
+
+.text-circles {
+  color: var(--color-text-black);
+}
+
+.dark .text-circles {
+  color: var(--color-text-dark);
+}
+
+.bg-test-card {
+  background-color: var(--color-circles);
+}
+
+.dark .bg-test-card {
+  background-color: var(--color-text);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.dark body {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
 }
 
 @media (max-width: 320px) {
