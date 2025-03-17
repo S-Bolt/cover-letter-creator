@@ -1,10 +1,11 @@
 import GetStartedButton from "../getStartedButton";
+import Dot from "./dotAnimation";
 import Rizz from "./rizzAnimation";
 
 export default function DesktopHow() {
   return (
-    <div className="bg-white mt-24 ">
-      <div className="text-4xl text-center font-bold my-18">How it Works</div>
+    <div className="relative bg-white my-24 ">
+      <div className=" text-4xl text-center font-bold my-18">How it Works</div>
       {/* Steps Grid */}
       <div className="grid grid-cols-2 max-w-2xl mx-auto">
         {/*Step 1*/}
@@ -12,9 +13,9 @@ export default function DesktopHow() {
           <div className="w-15 h-15 flex items-center justify-center bg-circles text-white rounded-full text-2xl font-bold ">
             1
           </div>
-          <div className="w-1 h-1 bg-primary my-2 "></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2 "></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2 "></div>{" "}
+          <Dot />
+          <Dot />
+          <Dot />
         </div>
         <div className="w-5/6  mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">
@@ -31,9 +32,9 @@ export default function DesktopHow() {
           <div className="w-15 h-15  flex items-center justify-center bg-circles text-white rounded-full text-2xl font-bold ">
             2
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />
+          <Dot />
+          <Dot />
         </div>
         <div className="w-5/6 mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">
@@ -50,9 +51,9 @@ export default function DesktopHow() {
           <div className="w-15 h-15  flex items-center justify-center bg-circles text-white rounded-full text-2xl font-bold ">
             3
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />
+          <Dot />
+          <Dot />
         </div>
         <div className="w-5/6 mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">
@@ -68,9 +69,9 @@ export default function DesktopHow() {
           <div className="w-15 h-15  flex items-center justify-center bg-circles text-white rounded-full text-2xl font-bold ">
             4
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />
+          <Dot />
+          <Dot />
         </div>
         <div className="w-5/6  mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">

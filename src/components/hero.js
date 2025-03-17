@@ -34,7 +34,7 @@ export default function Hero() {
                 visible: {
                   opacity: 1,
                   y: 0,
-                  transition: { staggerChildren: 0.5 },
+                  transition: { staggerChildren: 0.7 },
                 },
               }}
             >

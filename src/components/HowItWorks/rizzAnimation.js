@@ -11,7 +11,7 @@ export default function Rizz() {
         ref={ref}
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
         className="text-primary font-leckerli"
       >
         Rizz

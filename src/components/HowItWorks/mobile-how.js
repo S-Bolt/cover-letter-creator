@@ -1,4 +1,5 @@
 import GetStartedButton from "../getStartedButton";
+import Dot from "./dotAnimation";
 import Rizz from "./rizzAnimation";
 
 export default function MobileHow() {
@@ -12,7 +13,7 @@ export default function MobileHow() {
           <div className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full text-lg font-bold step-circle">
             1
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
         </div>
         <div className="">
           <h3 className="text-lg font-semibold text-center">
@@ -25,11 +26,11 @@ export default function MobileHow() {
         </div>
         {/*Step 2*/}
         <div className="flex flex-col items-center">
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
           <div className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full text-lg font-bold step-circle">
             2
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
         </div>
         <div>
           <h3 className="text-lg font-semibold text-center">
@@ -42,11 +43,11 @@ export default function MobileHow() {
         </div>
         {/*Step 3*/}
         <div className="flex flex-col items-center">
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
           <div className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full text-lg font-bold step-circle">
             3
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
         </div>
         <div>
           <h3 className="text-lg font-semibold text-center">
@@ -58,11 +59,11 @@ export default function MobileHow() {
         </div>
         {/*Step 4*/}
         <div className="flex flex-col items-center">
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
           <div className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full text-lg font-bold step-circle">
             4
           </div>
-          <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+          <Dot />{" "}
         </div>
         <div>
           <h3 className="text-lg font-semibold text-center">Seal the Deal</h3>
@@ -75,7 +76,7 @@ export default function MobileHow() {
 
       {/* Get Started Button */}
       <div className="flex flex-col items-center">
-        <div className="w-1 h-1 bg-primary my-2"></div>{" "}
+        <Dot />{" "}
         <div className="text-center ">
           <GetStartedButton className="rounded-2xl py-2 px-4" />
         </div>

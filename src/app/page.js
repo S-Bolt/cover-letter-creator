@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import Features from "@/components/features";
 import HowItWorks from "@/components/HowItWorks/howItWorks";
+import Testimonials from "@/components/Testimonials/testimonials";
 
 export default function Home() {
   return (
@@ -10,9 +11,8 @@ export default function Home() {
       <Hero />
       <Features />
       <HowItWorks />
+      <Testimonials />
 
-      {/*How it Works*/}
-      {/*Testimonials*/}
       {/*Footer*/}
     </div>
   );
