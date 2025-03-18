@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import GetStartedButton from "./getStartedButton";
 import { useTheme } from "next-themes";
@@ -14,10 +15,12 @@ export default function Navbar() {
   return (
     <div className="flex xs-flex-col justify-between items-center  m-2 sm:m-4 text-default bg-background  lg:text-xl lg:mx-8 xl:mx-16">
       <div>
-        <span className="text-default font-serif ">CL</span>
-        <span className="text-primary font-leckerli dark:text-white font-sans">
-          Rizz
-        </span>
+        <Link href={"/"}>
+          <span className="text-default font-serif ">CL</span>
+          <span className="text-primary font-leckerli dark:text-white font-sans">
+            Rizz
+          </span>
+        </Link>
       </div>
       <div className="flex justify-between items-center space-x-2 sm:space-x-8 md:space-x-8 lg:space-x-16 xl:space-x-24 xs-flex-col ">
         {mounted && (
