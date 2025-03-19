@@ -10,7 +10,7 @@ export default function DesktopHow() {
       <div className="grid grid-cols-2 max-w-2xl mx-auto">
         {/*Step 1*/}
         <div className="flex flex-col items-center  ">
-          <div className="w-15 h-15 flex items-center justify-center bg-circles text-circles rounded-full text-2xl font-bold ">
+          <div className="w-15 h-15 flex items-center justify-center bg-circles-h text-circles rounded-full text-2xl font-bold ">
             1
           </div>
           <Dot />
@@ -29,7 +29,7 @@ export default function DesktopHow() {
 
         {/*Step 2*/}
         <div className="flex flex-col items-center">
-          <div className="w-15 h-15  flex items-center justify-center bg-circles text-circles rounded-full text-2xl font-bold ">
+          <div className="w-15 h-15  flex items-center justify-center bg-circles-h text-circles rounded-full text-2xl font-bold ">
             2
           </div>
           <Dot />
@@ -48,7 +48,7 @@ export default function DesktopHow() {
 
         {/*Step 3*/}
         <div className="flex flex-col items-center">
-          <div className="w-15 h-15  flex items-center justify-center bg-circles text-circles rounded-full text-2xl font-bold ">
+          <div className="w-15 h-15  flex items-center justify-center bg-circles-h text-circles rounded-full text-2xl font-bold ">
             3
           </div>
           <Dot />
@@ -66,7 +66,7 @@ export default function DesktopHow() {
 
         {/*Step 4*/}
         <div className="flex flex-col items-center">
-          <div className="w-15 h-15  flex items-center justify-center bg-circles text-circles rounded-full text-2xl font-bold ">
+          <div className="w-15 h-15  flex items-center justify-center bg-circles-h text-circles rounded-full text-2xl font-bold ">
             4
           </div>
           <Dot />

@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Leckerli_One } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import Providers from "@/store/providers";
 
 const leckerliOne = Leckerli_One({
   weight: "400",
@@ -36,7 +37,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${leckerliOne.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system">
-          {children}
+          <Providers> {children} </Providers>
         </ThemeProvider>
       </body>
     </html>

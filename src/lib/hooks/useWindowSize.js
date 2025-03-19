@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 
 import { useEffect, useState } from "react";
 //To detect mobile or desktop in order to generate specific designs.

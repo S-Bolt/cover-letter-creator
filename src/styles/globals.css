@@ -15,7 +15,15 @@
   --color-text-dark: #ffffff;
 }
 
-/* Apply Tailwind-style utility behavior */
+/* Dark Mode Settings */
+
+.bg-generator-buttons {
+  background-color: var(--color-generator-buttons);
+}
+
+.dark .bg-generator-buttons {
+  background-color: var(--color-generator-dark);
+}
 .bg-document {
   background-color: var(--color-generator);
 }
@@ -47,11 +55,11 @@
   color: var(--color-text-dark);
 }
 
-.bg-circles {
+.bg-circles-h {
   background-color: var(--color-circles);
 }
 
-.dark .bg-circles {
+.dark .bg-circles-h {
   background-color: var(--color-primary);
 }
 
@@ -80,6 +88,7 @@ body {
   background-color: var(--color-background-dark);
   color: var(--color-text-dark);
 }
+/* Dark Mode Settings END*/
 
 @media (max-width: 320px) {
   .xs-flex-col {

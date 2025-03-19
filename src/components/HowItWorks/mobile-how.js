@@ -10,7 +10,7 @@ export default function MobileHow() {
       <div className="grid grid-cols-1  max-w-2xl mx-auto">
         {/*Step 1*/}
         <div className="flex flex-col items-center ">
-          <div className="w-10 h-10 flex items-center justify-center bg-circles text-circles rounded-full text-lg font-bold step-circle">
+          <div className="w-10 h-10 flex items-center justify-center bg-circles-h text-circles rounded-full text-lg font-bold step-circle">
             1
           </div>
           <Dot />{" "}
@@ -27,7 +27,7 @@ export default function MobileHow() {
         {/*Step 2*/}
         <div className="flex flex-col items-center">
           <Dot />{" "}
-          <div className="w-10 h-10 flex items-center justify-center bg-circles text-circles  rounded-full text-lg font-bold step-circle">
+          <div className="w-10 h-10 flex items-center justify-center bg-circles-h text-circles  rounded-full text-lg font-bold step-circle">
             2
           </div>
           <Dot />{" "}
@@ -44,7 +44,7 @@ export default function MobileHow() {
         {/*Step 3*/}
         <div className="flex flex-col items-center">
           <Dot />{" "}
-          <div className="w-10 h-10 flex items-center justify-center bg-circles text-circles  rounded-full text-lg font-bold step-circle">
+          <div className="w-10 h-10 flex items-center justify-center bg-circles-h text-circles  rounded-full text-lg font-bold step-circle">
             3
           </div>
           <Dot />{" "}
@@ -60,7 +60,7 @@ export default function MobileHow() {
         {/*Step 4*/}
         <div className="flex flex-col items-center">
           <Dot />{" "}
-          <div className="w-10 h-10 flex items-center justify-center bg-circles text-circles  rounded-full text-lg font-bold step-circle">
+          <div className="w-10 h-10 flex items-center justify-center bg-circles-h text-circles  rounded-full text-lg font-bold step-circle">
             4
           </div>
           <Dot />{" "}
