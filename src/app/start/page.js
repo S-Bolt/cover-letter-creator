@@ -5,9 +5,9 @@ export default function Start() {
     <>
       <Navbar />
       <div className="min-h-screen flex flex-col items-center mt-16 sm:mt-32 ">
-        <div className="text-default text-2xl sm:text-5xl ">
-          Time for the Rizz.
-        </div>
+        <h1 className="text-default text-2xl sm:text-5xl ">
+          Cover Letter Creation
+        </h1>
         <div className="">
           <QuestionsForm />
         </div>
