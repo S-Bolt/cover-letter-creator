@@ -4,16 +4,25 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import GetStartedButton from "./getStartedButton";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import LoginModal from "./loginModal";
+import { useDispatch, useSelector } from "react-redux";
+import { openAuthModal, closeAuthModal } from "@/store/slices/authModalSlice";
+import { useSession, signIn, signOut } from "next-auth/react";
+
+import AuthModal from "./authModal";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { data: session } = useSession();
+
+  const isAuthOpen = useSelector((state) => state.authModal.isOpen);
+  const authMode = useSelector((state) => state.authModal.mode);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
   return (
     <>
       <div className="flex xs-flex-col justify-between items-center  m-2 sm:m-4 text-default bg-background  lg:text-xl lg:mx-8 xl:mx-16">
@@ -38,20 +47,53 @@ export default function Navbar() {
               )}
             </button>
           )}
-          <button
-            className="text-sm sm:text-base lg:text-xl"
-            onClick={() => setIsLoginOpen(true)}
-          >
-            Login
-          </button>
 
-          <div className="text-sm sm:text-base lg:text-xl ">Pricing</div>
+          {/*Check for authenticated user*/}
+          {session ? (
+            <>
+              <span className="text-sm sm:text-base lg:text-xl">
+                Welcome, {session.user.username}
+              </span>
+              <button
+                onClick={() => signOut()}
+                className="text-sm sm:text-base lg:text-xl px-4 py-2"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <div>
+                <button
+                  className="text-sm sm:text-base lg:text-xl"
+                  onClick={() => dispatch(openAuthModal("login"))}
+                >
+                  Login
+                </button>
+              </div>
+
+              <div>
+                <button
+                  className="text-sm sm:text-base lg:text-xl"
+                  onClick={() => dispatch(openAuthModal("signup"))}
+                >
+                  Sign Up
+                </button>
+              </div>
+            </>
+          )}
           <GetStartedButton className="px-4 py-1 rounded-xl sm:rounded-3xl xl:px-12 lg:text-xl" />
         </div>
       </div>
 
       {/* Render the Login Modal */}
-      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      {isAuthOpen && (
+        <AuthModal
+          isOpen={isAuthOpen}
+          onClose={() => dispatch(closeAuthModal())}
+          mode={authMode}
+        />
+      )}
     </>
   );
 }

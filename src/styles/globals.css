@@ -46,7 +46,6 @@
   background-color: var(--color-background-dark);
 }
 
-/* Text Colors */
 .text-default {
   color: var(--color-text);
 }
@@ -89,6 +88,14 @@ body {
   color: var(--color-text-dark);
 }
 /* Dark Mode Settings END*/
+
+@layer utilities {
+  @media (min-width: 640px) {
+    .mr-responsive {
+      margin-right: clamp(2rem, 12vw, 20rem);
+    }
+  }
+}
 
 @media (max-width: 320px) {
   .xs-flex-col {

@@ -3,6 +3,7 @@ import { Leckerli_One } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import Providers from "@/store/providers";
+import SessionProviderWrapper from "@/store/sessionProviderWrapper";
 
 const leckerliOne = Leckerli_One({
   weight: "400",
@@ -36,9 +37,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${leckerliOne.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <Providers> {children} </Providers>
-        </ThemeProvider>
+        <SessionProviderWrapper>
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <Providers> {children} </Providers>
+          </ThemeProvider>
+        </SessionProviderWrapper>
       </body>
     </html>
   );
