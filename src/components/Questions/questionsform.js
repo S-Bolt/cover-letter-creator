@@ -1,20 +1,36 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useState } from "react";
+import Skill from "./skill";
 
 export default function QuestionsForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     jobTitle: "",
     companyName: "",
-    skills: "",
+    jobDescription: "",
+    remote: "null",
+    skills: ["", "", "", "", ""],
     experience: "",
-    additionalInfo: "",
+    rightFit: "",
+    companyContributions: "",
     useEducation: null,
     education: "",
     school: "",
     major: "",
-    collgeExperience: "",
+    collegeExperience: "",
   });
+
+  // List of available traits
+  const traitsOptions = [
+    "Team Player",
+    "Innovative",
+    "Reliable",
+    "Adaptable",
+    "Detail-Oriented",
+    "Creative",
+    "Analytical",
+  ];
 
   function handleChange(e) {
     setFormData((prev) => ({
@@ -32,8 +48,29 @@ export default function QuestionsForm() {
     if (value) {
       setStep(2);
     } else {
-      setStep(4);
+      setStep(3);
     }
+  }
+
+  function handleRemote(value) {
+    setFormData((prev) => ({
+      ...prev,
+      remote: value,
+    }));
+  }
+
+  function handleAddSkill(e) {
+    const { name, value } = e.target;
+    const index = parseInt(name.replace("skill", ""), 10) - 1;
+
+    setFormData((prev) => {
+      const newSkills = [...prev.skills];
+      newSkills[index] = value;
+      return {
+        ...prev,
+        skills: newSkills,
+      };
+    });
   }
 
   //step handlers
@@ -126,8 +163,8 @@ export default function QuestionsForm() {
                 </label>
                 <textarea
                   type="text"
-                  name="collgeExperience"
-                  value={formData.collgeExperience}
+                  name="collegeExperience"
+                  value={formData.collegeExperience}
                   onChange={handleChange}
                   className="bg-background py-2 mb-4 rounded-lg w-full"
                 />
@@ -135,8 +172,115 @@ export default function QuestionsForm() {
             </div>
           </>
         )}
-        {step === 3 && <></>}
-        {step === 4 && <></>}
+        {step === 3 && (
+          <>
+            <div>
+              <div>
+                <label className="block mb-4">Job Title</label>
+                <input
+                  type="text"
+                  name="jobTitle"
+                  value={formData.jobTitle}
+                  onChange={handleChange}
+                  className="bg-background py-2 mb-4 rounded-lg w-full"
+                />
+              </div>
+              <div>
+                <label className="block mb-4">Company Name</label>
+                <input
+                  type="text"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className="bg-background py-2 mb-4 rounded-lg w-full"
+                />
+              </div>
+              <div>
+                <label className="block mb-4">Is this Position Remote?</label>
+                <div className="flex items-center space-x-8">
+                  <button
+                    type="button"
+                    onClick={() => handleRemote(true)}
+                    className="bg-background p-6 rounded-lg"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleRemote(false)}
+                    className="bg-background p-6 rounded-lg"
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label className="block mb-4">Paste the Job Description</label>
+                <textarea
+                  type="text"
+                  name="jobDescription"
+                  value={formData.jobDescription}
+                  onChange={handleChange}
+                  className="bg-background py-2 mb-4 rounded-lg w-full"
+                />
+              </div>
+            </div>
+          </>
+        )}
+        {step === 4 && (
+          <>
+            <div className="block mb-2">
+              What top skills do you have for this job?
+            </div>
+            <Skill
+              title={"Skill 1"}
+              name={"skill1"}
+              onHandleAddSkill={handleAddSkill}
+              value={formData.skills[0] || ""}
+            />
+            <Skill
+              title={"Skill 2"}
+              name={"skill2"}
+              onHandleAddSkill={handleAddSkill}
+              value={formData.skills[1] || ""}
+            />
+            <Skill
+              title={"Skill 3"}
+              name={"skill3"}
+              onHandleAddSkill={handleAddSkill}
+              value={formData.skills[2] || ""}
+            />
+          </>
+        )}
+        {step === 5 && (
+          <>
+            <div>Extra Credit</div>
+            <div>
+              <label className="block mb-4">
+                Why is this job right for you
+              </label>
+              <textarea
+                type="text"
+                name="rightFit"
+                value={formData.rightFit}
+                onChange={handleChange}
+                className="bg-background py-2 mb-4 rounded-lg w-full"
+              />
+            </div>
+            <div>
+              <label className="block mb-4">
+                how do you envision contributing to the company's success?
+              </label>
+              <textarea
+                type="text"
+                name="companyContributions"
+                value={formData.companyContributions}
+                onChange={handleChange}
+                className="bg-background py-2 mb-4 rounded-lg w-full"
+              />
+            </div>
+          </>
+        )}
 
         <div className="flex justify-between mt-4">
           {step > 1 && (
@@ -148,7 +292,7 @@ export default function QuestionsForm() {
               Back
             </button>
           )}
-          {step < 4 && (
+          {step < 6 && (
             <button
               type="button"
               onClick={handleNext}
@@ -157,7 +301,7 @@ export default function QuestionsForm() {
               Next
             </button>
           )}
-          {step === 4 && (
+          {step === 6 && (
             <button
               type="submit"
               className="px-4 py-2 bg-green-500 text-white rounded"
