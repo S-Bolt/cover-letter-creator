@@ -5,6 +5,7 @@ import Skill from "./skill";
 import { useDispatch } from "react-redux";
 import { setCoverLetter } from "@/store/slices/generatedCoverLetterSlice";
 import { useRouter } from "next/navigation";
+import LoadingScreen from "./loadingScreen";
 
 export default function QuestionsForm() {
   const dispatch = useDispatch();
@@ -179,6 +180,10 @@ export default function QuestionsForm() {
       setError(error.message);
       setLoading(false);
     }
+  }
+
+  if (loading) {
+    return <LoadingScreen />;
   }
 
   //step handlers
