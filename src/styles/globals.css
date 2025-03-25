@@ -140,3 +140,28 @@ body {
     inset 0px -2px 3px rgba(0, 0, 0, 0.3);
   transform: scale(0.95);
 }
+
+.document-container {
+  background: #fff;
+  margin: 2rem auto;
+  max-width: 800px;
+  max-height: 70vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  font-family: "Calibri", sans-serif;
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+.document-page {
+  width: 816px;
+  height: 1056px;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  font-family: "Calibri", sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
