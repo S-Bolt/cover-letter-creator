@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import Providers from "@/store/providers";
 import SessionProviderWrapper from "@/store/sessionProviderWrapper";
+import { Analytics } from "@vercel/analytics/next";
 
 const leckerliOne = Leckerli_One({
   weight: "400",
@@ -39,9 +40,10 @@ export default function RootLayout({ children }) {
       >
         <SessionProviderWrapper>
           <ThemeProvider attribute="class" defaultTheme="system">
-            <Providers> {children} </Providers>
+            <Providers>{children}</Providers>
           </ThemeProvider>
         </SessionProviderWrapper>
+        <Analytics />
       </body>
     </html>
   );

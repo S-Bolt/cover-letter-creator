@@ -16,6 +16,10 @@ const initialState = {
   major: "",
   collegeExperience: "",
   tone: "",
+  phoneNumber: "",
+  firstName: "",
+  lastName: "",
+  email: "",
 };
 
 const coverLetterFormSlice = createSlice({

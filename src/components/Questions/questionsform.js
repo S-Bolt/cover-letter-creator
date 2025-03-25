@@ -15,6 +15,7 @@ import SelectTone from "./selectToneInput";
 import BackButton from "./backButton";
 import NextButton from "./nextButton";
 import GenerateCLButton from "./generateCLButton";
+import PersonalHeaderInput from "./personalHeaderInput";
 
 export default function QuestionsForm() {
   const dispatch = useDispatch();
@@ -81,12 +82,13 @@ export default function QuestionsForm() {
         {step === 4 && <SkillsInput />}
         {step === 5 && <YourTraits />}
         {step === 6 && <ExtraInput />}
-        {step === 7 && <SelectTone />}
+        {step === 7 && <PersonalHeaderInput />}
+        {step === 8 && <SelectTone />}
 
         <div className="flex justify-between mt-4">
           {step > 1 && <BackButton onHandleBack={handleBack} />}
-          {step < 7 && <NextButton onHandleNext={handleNext} />}
-          {step === 7 && <GenerateCLButton />}
+          {step < 8 && <NextButton onHandleNext={handleNext} />}
+          {step === 8 && <GenerateCLButton />}
         </div>
       </form>
     </div>
