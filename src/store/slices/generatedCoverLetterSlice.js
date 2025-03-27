@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: "",
+  font: "font-sans",
 };
 
 const generatedCoverLetterSlice = createSlice({
@@ -11,12 +12,15 @@ const generatedCoverLetterSlice = createSlice({
     setCoverLetter: (state, action) => {
       state.value = action.payload;
     },
+    setFont: (state, action) => {
+      state.value = action.payload;
+    },
     clearCoverLetter: (state) => {
       state.value = "";
     },
   },
 });
 
-export const { setCoverLetter, clearCoverLetter } =
+export const { setCoverLetter, clearCoverLetter, setFont } =
   generatedCoverLetterSlice.actions;
 export default generatedCoverLetterSlice.reducer;

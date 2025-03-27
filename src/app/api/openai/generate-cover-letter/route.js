@@ -48,6 +48,7 @@ You need to understand that job desciption is copy pasted from the job listing. 
 Please do not add or assume any additional details beyond what is provided, years of experience, years using skills.
 If a required skill or experience is not explicitly provided in the applicant details, do not include it in the cover letter.
 Do not fabricate experience or skills that I do not have.
+Do not include a subject line.
     `;
 
     console.log("Applicant Info Prompt:", customPrompt);

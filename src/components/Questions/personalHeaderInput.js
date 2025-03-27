@@ -1,16 +1,14 @@
 "use client";
+import { updateHeaderField } from "@/store/slices/headerSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { updateField } from "@/store/slices/coverLetterFormSlice";
 
 export default function PersonalHeaderInput() {
   const dispatch = useDispatch();
-  const { firstName, lastName, phoneNumber, email } = useSelector(
-    (state) => state.coverLetterForm
-  );
+  const { header } = useSelector((state) => state.header);
 
   function handleChange(e) {
     const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
+    dispatch(updateHeaderField({ field: name, value }));
   }
 
   return (
@@ -24,7 +22,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="firstName"
               name="firstName"
-              value={firstName}
+              value={header.firstname}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -36,7 +34,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="lastName"
               name="lastName"
-              value={lastName}
+              value={header.lastName}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -51,7 +49,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="email"
               name="email"
-              value={email}
+              value={header.email}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -63,7 +61,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="phoneNumber"
               name="phoneNumber"
-              value={phoneNumber}
+              value={header.phoneNumber}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
