@@ -1,9 +1,10 @@
+import stylesA from "./styleA.module.css";
 export const headerStyles = {
   A: {
-    container: "header-container style-a-container",
-    title: "header-title style-a-title",
-    subtitle: "header-subtitle style-a-subtitle",
-    contact: "header-contact style-a-contact",
+    container: stylesA.headerContainer,
+    title: stylesA.headerTitle,
+    subtitle: stylesA.headerSubtitle,
+    contact: stylesA.headerContact,
   },
   B: {
     container: "header-container style-b-container",

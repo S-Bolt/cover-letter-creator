@@ -157,7 +157,6 @@ body {
   width: 816px;
   height: 1056px;
   background: #fff;
-  padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   font-family: sans-serif;
@@ -178,7 +177,6 @@ body {
 
 .header-subtitle {
   font-size: 1.5rem;
-  font-weight: 500;
 }
 
 .header-contact {
@@ -186,9 +184,7 @@ body {
 }
 
 .custom-hr {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 .cover-letter-body {
@@ -199,4 +195,10 @@ body {
   font-size: 1rem;
   white-space: pre-wrap;
   flex: 2;
+}
+
+.tiptap-svg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
 }

@@ -4,30 +4,26 @@ import StarterKit from "@tiptap/starter-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import CustomHeading from "./customHeading";
+import CustomParagraph from "./customParagraph";
+
 import { updateHeaderField } from "@/store/slices/headerSlice";
+import CustomHR from "./customHR";
 
-export default function HeaderEditor() {
+export default function HeaderEditor({ onHeaderContent }) {
   const dispatch = useDispatch();
-  const { jobTitle } = useSelector((state) => state.coverLetterForm);
-  const { header } = useSelector((state) => state.header);
-
-  // Build your header HTML string. Adjust class names as needed.
-  const headerContent = `
-    <div class="header-container">
-      <h1 class="header-title">${header.firstName} ${header.lastName}</h1>
-      <h2 class="header-subtitle">${jobTitle}</h2>
-      <p class="header-contact">${header.email} | ${header.phoneNumber}</p>
-    </div>
-  `;
 
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
         heading: false,
+        paragraph: false,
+        horizontalRule: false,
       }),
       CustomHeading,
+      CustomParagraph,
+      CustomHR,
     ],
-    content: headerContent,
+    content: onHeaderContent,
     onUpdate: ({ editor }) => {
       const newContent = editor.getHTML();
       dispatch(updateHeaderField(newContent));
@@ -36,12 +32,12 @@ export default function HeaderEditor() {
 
   useEffect(() => {
     if (editor) {
-      editor.commands.setContent(headerContent);
+      editor.commands.setContent(onHeaderContent);
     }
-  }, [headerContent, editor]);
+  }, [onHeaderContent, editor]);
 
   return (
-    <div className="header-editor bg-amber-300 p-4">
+    <div className="header-editor bg-white p-4">
       {editor ? (
         <EditorContent editor={editor} />
       ) : (

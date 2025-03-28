@@ -13,7 +13,7 @@ export default function TemplateSelectorModal({ onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-black/90  flex justify-center items-center z-50">
       <div className="bg-white rounded-lg p-6 w-80">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-bold">Select Template</h2>

@@ -1,14 +1,18 @@
 "use client";
+import { updateField } from "@/store/slices/coverLetterFormSlice";
 import { updateHeaderField } from "@/store/slices/headerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PersonalHeaderInput() {
   const dispatch = useDispatch();
-  const { header } = useSelector((state) => state.header);
+  const { firstname, lastName, email, phoneNumber } = useSelector(
+    (state) => state.header
+  );
 
   function handleChange(e) {
     const { name, value } = e.target;
     dispatch(updateHeaderField({ field: name, value }));
+    dispatch(updateField({ field: name, value }));
   }
 
   return (
@@ -22,7 +26,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="firstName"
               name="firstName"
-              value={header.firstname}
+              value={firstname}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -34,7 +38,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="lastName"
               name="lastName"
-              value={header.lastName}
+              value={lastName}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -49,7 +53,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="email"
               name="email"
-              value={header.email}
+              value={email}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required
@@ -61,7 +65,7 @@ export default function PersonalHeaderInput() {
               type="text"
               id="phoneNumber"
               name="phoneNumber"
-              value={header.phoneNumber}
+              value={phoneNumber}
               onChange={handleChange}
               className="bg-background py-2 mb-4 rounded-lg w-full"
               required

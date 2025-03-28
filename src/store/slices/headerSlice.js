@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  header: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-  },
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
 };
 
 const headerSlice = createSlice({
@@ -15,7 +13,7 @@ const headerSlice = createSlice({
   reducers: {
     updateHeaderField: (state, action) => {
       const { field, value } = action.payload;
-      state.header[field] = value;
+      state[field] = value;
     },
     resetHeader: (state) => {
       state.value = initialState.value;

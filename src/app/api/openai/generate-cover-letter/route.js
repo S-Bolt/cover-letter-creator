@@ -9,6 +9,7 @@ const openai = new OpenAI({
 export async function POST(request) {
   try {
     const formData = await request.json();
+    console.log(formData);
     if (
       !formData.jobTitle ||
       !formData.companyName ||
@@ -49,7 +50,10 @@ Please do not add or assume any additional details beyond what is provided, year
 If a required skill or experience is not explicitly provided in the applicant details, do not include it in the cover letter.
 Do not fabricate experience or skills that I do not have.
 Do not include a subject line.
-    `;
+End the letter with a salutation that matches the tone use the acutal user's name if avialable
+${formData.firstName || "[First Name]"} ${formData.lastName || "[Last Name]"}"
+Don't re-use content matierial from tone.prompt. Create your own joke content in a similar manner.
+ `;
 
     console.log("Applicant Info Prompt:", customPrompt);
 
@@ -60,7 +64,7 @@ Do not include a subject line.
       messages: [
         {
           role: "system",
-          content: `You are an expert career advisor that writes personalized cover letters. Write the cover letter under 400 words.  Use a tone that matches ${formData.tone.tone} `,
+          content: `You are an expert career advisor that writes personalized cover letters. Write the cover letter under 375 words.  Use a tone that matches ${formData.tone.tone} `,
         },
         {
           role: "user",
