@@ -3,6 +3,9 @@ export default function Footer() {
     <div className="bg-primary h-48 mt-8 flex flex-col justify-center w-full">
       <div className="flex flex-row justify-center gap-4 text-sm sm:gap-8 sm:text-base">
         <div className="text-white">Pricing</div>
+        <a href="/job-search" className="text-white hover:underline">
+          Jobs Search
+        </a>
         <div className="text-white">Get Started</div>
         <div className="text-white">Support</div>
         <div className="text-white">Login</div>

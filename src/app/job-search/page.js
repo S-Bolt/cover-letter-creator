@@ -1,16 +1,28 @@
 "use client";
+import Navbar from "@/components/navbar";
 import { useState } from "react";
 
 export default function JobSearch() {
   const [jobQuery, setJobQuery] = useState("");
   const [locationQuery, setLocationQuery] = useState("");
   const [timeFilter, setTimeFilter] = useState("qdr:h1");
-  const jobSites = [
-    "linkedin.com/jobs",
-    "jobs.lever.co",
-    "greenhouse.io",
-    "jobs.workable.com",
-  ];
+  const [clickedSites, setClickedSites] = useState({});
+  const jobSites = {
+    Linkedin: "linkedin.com/jobs",
+    Glassdoor: "glassdoor.com/Job",
+    Jobvite: "jobvite.com",
+    Myworkdayjobs: "myworkdayjobs.com",
+    Remotive: "remotive.com/remote-jobs",
+    Wellfound: "wellfound.com/jobs",
+    Lever: "jobs.lever.co",
+    Greenhouse: "greenhouse.io",
+    Workable: "jobs.workable.com",
+    Workatastartup: "workatastartup.com",
+    Builtin: "builtin.com/job/",
+    Applytojob: "applytojob.com",
+    Smartrecruiters: "jobs.smartrecruiters.com",
+    Paylocity: "recruiting.paylocity.com",
+  };
 
   const usStates = [
     "Alabama",
@@ -89,13 +101,22 @@ export default function JobSearch() {
     const googleSearchURL = `https://www.google.com/search?q="${query}"+site:${site}+${location}&tbs=${time}`;
 
     window.open(googleSearchURL, "_blank");
+
+    setClickedSites((prev) => ({
+      ...prev,
+      [site]: true,
+    }));
   }
 
   return (
     <main>
+      <Navbar />
       <div className="flex flex-col justify-center items-center">
-        <h1>Job Search Tool</h1>
-        <form onSubmit={handleSubmit} className="flex flex-row space-x-4">
+        <h1 className="text-3xl my-8">Job Search Tool</h1>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row space-x-4"
+        >
           {/*JobTitle*/}
           <div className="flex flex-col">
             <label className="text-center">Job Title</label>
@@ -145,30 +166,27 @@ export default function JobSearch() {
               ))}
             </select>
           </div>
-          {/*Submit Button*/}
-          <div className="">
-            <div className="my-6"></div>
-            <button
-              type="submit"
-              className=" bg-primary text-white py-2 px-4 rounded-lg  hover:bg-orange-700 active:shadow-inner transition"
-            >
-              Search
-            </button>
-          </div>
         </form>
       </div>
-      <ul>
-        {jobSites.map((site) => (
-          <li key={site}>
-            <button
-              onClick={() => handleJobSearch(site)}
-              className="bg-gray-200 border-2 rounded-2xl p-2"
+      <div className="flex justify-center m-8">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm sm:text-base ">
+          {Object.entries(jobSites).map(([name, site]) => (
+            <li
+              key={name}
+              className="flex justify-center items-center text-black"
             >
-              {site}
-            </button>
-          </li>
-        ))}
-      </ul>
+              <button
+                onClick={() => handleJobSearch(site)}
+                className={`bg-gray-200  rounded-2xl p-2 w-36 transition ${
+                  clickedSites[site] ? "border-primary border-2" : "border-2"
+                }`}
+              >
+                {name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   );
 }

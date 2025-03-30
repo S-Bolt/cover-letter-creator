@@ -4,7 +4,6 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 
 export default function LayoutB({ content }) {
-  const { coverLetter } = useSelector((state) => state.coverLetter);
   const { firstName, lastName, email, phoneNumber } = useSelector(
     (state) => state.header
   );
@@ -17,6 +16,16 @@ export default function LayoutB({ content }) {
     month: "long",
     day: "numeric",
   });
+
+  // Ensure paragraphs in `content` have spacing
+  const formattedContent = content
+    .split("\n")
+    .filter((paragraph) => paragraph.trim() !== "")
+    .map((paragraph, index) => (
+      <p key={index} className="mb-4 leading-relaxed">
+        {paragraph}
+      </p>
+    ));
 
   return (
     <div className="layout-b  grid grid-cols-[1fr_2fr] grid-rows-[auto_1fr]">
@@ -49,7 +58,7 @@ export default function LayoutB({ content }) {
       {/* Row 2, Column 2: Cover Letter Content */}
       <div className="col-span-1 ml-4">
         {/*LETTER */}
-        <div>{content}</div>
+        <div>{formattedContent}</div>
       </div>
     </div>
   );
