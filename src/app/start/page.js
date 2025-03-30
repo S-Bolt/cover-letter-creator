@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar/navbar";
 import QuestionsForm from "@/components/Questions/questionsform";
 
 export default function Start() {

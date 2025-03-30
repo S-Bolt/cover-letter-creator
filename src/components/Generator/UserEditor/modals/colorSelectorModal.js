@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setPrimaryColor, setSecondaryColor } from "@/store/slices/colorSlice";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import ColorButton from "./templates/colorButton";
+import ColorButton from "../colorButton";
 
 export default function ColorSelectorModal({ onClose }) {
   const dispatch = useDispatch();

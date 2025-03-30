@@ -1,12 +1,11 @@
 import { PaintBrushIcon } from "@heroicons/react/24/solid";
-import { ArrowTurnDownLeftIcon } from "@heroicons/react/24/solid";
 import { HashtagIcon } from "@heroicons/react/24/solid";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import CircleButton from "./circleButton";
 import { useState } from "react";
-import TemplateSelectorModal from "./Layouts/templateSelectorModal";
-import ColorSelectorModal from "./Layouts/colorSelectorModal";
-import FontSelectorModal from "./Layouts/fontSelectorModal";
+import TemplateSelectorModal from "./modals/templateSelectorModal";
+import ColorSelectorModal from "./modals/colorSelectorModal";
+import FontSelectorModal from "./modals/fontSelectorModal";
 
 export default function Editor({ colSpan }) {
   const [showActiveModal, setShowActiveModal] = useState(null);

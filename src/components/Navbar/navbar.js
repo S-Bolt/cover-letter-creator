@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
-import GetStartedButton from "./getStartedButton";
+import GetStartedButton from "../LandingPage/getStartedButton";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { openAuthModal, closeAuthModal } from "@/store/slices/authModalSlice";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-import AuthModal from "./authModal";
+import AuthModal from "../Auth/authModal";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();

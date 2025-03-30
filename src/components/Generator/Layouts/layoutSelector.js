@@ -1,7 +1,7 @@
 "use client";
 import { useSelector } from "react-redux";
-import LayoutA from "./styleA";
-import LayoutB from "./styleB";
+import LayoutA from "./templates/styleA";
+import LayoutB from "./templates/styleB";
 
 export default function LayoutSelector() {
   const selectedTemplate = useSelector((state) => state.template.selected);

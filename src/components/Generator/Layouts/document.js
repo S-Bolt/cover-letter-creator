@@ -1,6 +1,6 @@
 "use client";
 import { useSelector } from "react-redux";
-import LayoutSelector from "./Layouts/templates/layoutSelector";
+import LayoutSelector from "./layoutSelector";
 
 export default function Document({ colSpan }) {
   return (

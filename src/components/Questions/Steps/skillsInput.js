@@ -1,7 +1,7 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSkills } from "@/store/slices/coverLetterFormSlice";
-import Skill from "./skill";
+import Skill from "../QuestionsComponents/skill";
 
 export default function SkillsInput() {
   const dispatch = useDispatch();

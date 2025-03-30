@@ -1,11 +1,11 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar } from "@/store/slices/sidebarSlice";
-import Document from "@/components/Generator/document";
-import Editor from "@/components/Generator/editor";
-import Sidebar from "@/components/Generator/sidebar";
-import Navbar from "@/components/navbar";
-import SmallSidebar from "@/components/Generator/smallSidebar";
+import Document from "@/components/Generator/Layouts/document";
+import Editor from "@/components/Generator/UserEditor/editor";
+import Sidebar from "./Sidebar/sidebar";
+import Navbar from "@/components/Navbar/navbar";
+import SmallSidebar from "./Sidebar/smallSidebar";
 
 export default function LargeGenerator() {
   const sidebar = useSelector((state) => state.sidebar.sidebar);

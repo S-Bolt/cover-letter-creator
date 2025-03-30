@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import GetStartedButton from "@/components/getStartedButton";
+import GetStartedButton from "@/components/LandingPage/getStartedButton";
 import { motion } from "framer-motion";
 
 export default function Hero() {

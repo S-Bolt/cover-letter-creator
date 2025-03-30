@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Sidebar from "@/components/Generator/sidebar";
-import Document from "@/components/Generator/document";
-import Editor from "@/components/Generator/editor";
-import Navbar from "../navbar";
+import Sidebar from "./Sidebar/sidebar";
+import Document from "@/components/Generator/Layouts/document";
+import Editor from "@/components/Generator/UserEditor/editor";
+import Navbar from "../Navbar/navbar";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
 export default function MobileGenerator() {
