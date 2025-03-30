@@ -8,7 +8,7 @@ export default function Document({ colSpan }) {
       className={`bg-document flex justify-center items-center rounded-xl h-full px-4 ${colSpan}`}
     >
       <div className="document-container h-3/4 ">
-        <div className="document-page bg-white">
+        <div className="document-page">
           <LayoutSelector />
         </div>
       </div>

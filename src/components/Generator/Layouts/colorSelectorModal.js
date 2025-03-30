@@ -6,15 +6,11 @@ import ColorButton from "./templates/colorButton";
 
 export default function ColorSelectorModal({ onClose }) {
   const dispatch = useDispatch();
-  const { primary, secondary } = useSelector((state) => state.color);
+  const { primaryColor, secondaryColor } = useSelector((state) => state.color);
 
   function handleColorSelection(e) {
-    const outerColor = e.currentTarget
-      .querySelector(".outerColor")
-      .getAttribute("data-value");
-    const innerColor = e.currentTarget
-      .querySelector(".innerColor")
-      .getAttribute("data-value");
+    const outerColor = e.currentTarget.dataset.outer;
+    const innerColor = e.currentTarget.dataset.inner;
 
     dispatch(setPrimaryColor(innerColor));
     dispatch(setSecondaryColor(outerColor));
@@ -34,13 +30,27 @@ export default function ColorSelectorModal({ onClose }) {
           onClick={handleColorSelection}
           outerColor={"bg-white"}
           outerValue={"#ffffff"}
-          innerColor={"bg-gray-200"}
-          innerValue={"#e5e7eb"}
+          innerColor={"bg-black"}
+          innerValue={"#000000"}
+        />
+        <ColorButton
+          onClick={handleColorSelection}
+          outerColor={"bg-white"}
+          outerValue={"#ffffff"}
+          innerColor={"bg-red-600"}
+          innerValue={"#e7000b"}
+        />
+        <ColorButton
+          onClick={handleColorSelection}
+          outerColor={"bg-blue-200"}
+          outerValue={"#b9d4ff"}
+          innerColor={"bg-blue-800"}
+          innerValue={"#193cb8"}
         />
 
         <button>
           <div className="outerColor relative w-16 h-16 border border-black rounded-full flex justify-center items-center">
-            <div className="innerColor w-8 h-8 border border-black rounded-full "></div>
+            <div className="innerColor w-8 h-8 border border-black rounded-full bg-blue-200"></div>
           </div>
         </button>
 
@@ -49,7 +59,7 @@ export default function ColorSelectorModal({ onClose }) {
           <label className="block text-sm font-medium">Primary Color</label>
           <input
             type="color"
-            value={primary}
+            value={primaryColor}
             onChange={(e) => dispatch(setPrimaryColor(e.target.value))}
             className="w-full h-10 cursor-pointer"
           />
@@ -60,7 +70,7 @@ export default function ColorSelectorModal({ onClose }) {
           <label className="block text-sm font-medium">Secondary Color</label>
           <input
             type="color"
-            value={secondary}
+            value={secondaryColor}
             onChange={(e) => dispatch(setSecondaryColor(e.target.value))}
             className="w-full h-10 cursor-pointer"
           />

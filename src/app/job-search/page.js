@@ -25,6 +25,7 @@ export default function JobSearch() {
   };
 
   const usStates = [
+    "United States",
     "Alabama",
     "Alaska",
     "Arizona",

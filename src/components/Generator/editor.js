@@ -6,26 +6,19 @@ import CircleButton from "./circleButton";
 import { useState } from "react";
 import TemplateSelectorModal from "./Layouts/templateSelectorModal";
 import ColorSelectorModal from "./Layouts/colorSelectorModal";
+import FontSelectorModal from "./Layouts/fontSelectorModal";
 
 export default function Editor({ colSpan }) {
-  const [showTemplateSelector, setShowTemplateSelector] = useState(false);
-  const [showColor, setShowColor] = useState(false);
+  const [showActiveModal, setShowActiveModal] = useState(null);
 
-  function handleOpenTemplateSelector() {
-    setShowTemplateSelector(true);
+  function handleOpen(type) {
+    setShowActiveModal(type);
   }
 
-  function handleCloseTemplateSelector() {
-    setShowTemplateSelector(false);
+  function handleClose() {
+    setShowActiveModal(null);
   }
 
-  function handleOpenColor() {
-    setShowColor(true);
-  }
-
-  function handleCloseColor() {
-    setShowColor(false);
-  }
   return (
     <>
       <div className={`bg-cl-generator h-20 self-end rounded-xl ${colSpan}`}>
@@ -33,22 +26,30 @@ export default function Editor({ colSpan }) {
           <CircleButton
             icon={SparklesIcon}
             label={"STYLE"}
-            onClick={handleOpenTemplateSelector}
+            onClick={() => handleOpen("style")}
           />
 
           <CircleButton
             icon={PaintBrushIcon}
             label={"COLOR"}
-            onClick={handleOpenColor}
+            onClick={() => handleOpen("color")}
           />
-          <CircleButton icon={HashtagIcon} label={"TEXT"} />
-          <CircleButton icon={ArrowTurnDownLeftIcon} label={"RESET"} />
+          <CircleButton
+            icon={HashtagIcon}
+            label={"FONT"}
+            onClick={() => handleOpen("font")}
+          />
         </div>
       </div>
-      {showTemplateSelector && (
-        <TemplateSelectorModal onClose={handleCloseTemplateSelector} />
+      {showActiveModal === "style" && (
+        <TemplateSelectorModal onClose={handleClose} />
       )}
-      {showColor && <ColorSelectorModal onClose={handleCloseColor} />}
+      {showActiveModal === "color" && (
+        <ColorSelectorModal onClose={handleClose} />
+      )}
+      {showActiveModal === "font" && (
+        <FontSelectorModal onClose={handleClose} />
+      )}
     </>
   );
 }

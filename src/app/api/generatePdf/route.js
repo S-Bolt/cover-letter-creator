@@ -4,9 +4,9 @@ import os from "os";
 
 export const POST = async (req) => {
   try {
-    let { htmlContent } = await req.json();
+    let { htmlContent, secondaryColor } = await req.json();
 
-    // ✅ Wrap everything in proper HTML structure
+    // Wrap everything in proper HTML structure
     htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +16,35 @@ export const POST = async (req) => {
   <title>Cover Letter</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { width: 100%; margin: 0; font-size: 14px; }
-    @page { size: A4;  }
-    p { margin-bottom: 1.5em; } 
-</style>
+    /* ✅ Ensures Full Background Coverage */
+    html, body { 
+      background-color: ${secondaryColor};
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+    
+    /*  Ensures Puppeteer Doesn’t Clip Background */
+    @page { 
+      size: A4;
+      margin: 0; /*
+    }
+
+    .document-page {
+      width: 100%;
+      height: 100vh;
+      min-height: 297mm;  
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: ${secondaryColor};
+    }
+  </style>
 </head>
 <body>
-  <div class="document-page bg-white"><p>${htmlContent}</p></div>
+  <div class="document-page">${htmlContent}</div>
 </body>
 </html>
 `;
@@ -36,7 +58,7 @@ export const POST = async (req) => {
         headless: chromium.headless,
       });
     } else {
-      const isWindows = os.platform() === "win32"; // Detect OS
+      const isWindows = os.platform() === "win32";
       const executablePath = isWindows
         ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
         : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
@@ -71,9 +93,10 @@ export const POST = async (req) => {
 
     console.log("Generating PDF...");
     const pdfBuffer = await page.pdf({
-      format: "A4", // ✅ Uses a standard format
-      printBackground: true, // ✅ Ensures background colors render
+      format: "A4",
+      printBackground: true,
       preferCSSPageSize: true,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
 
     await browser.close();

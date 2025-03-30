@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  primary: "#000000",
-  secondary: "#ffffff",
+  primaryColor: "#000000",
+  secondaryColor: "#ffffff",
 };
 
 export const colorSlice = createSlice({
@@ -10,10 +10,10 @@ export const colorSlice = createSlice({
   initialState,
   reducers: {
     setPrimaryColor: (state, action) => {
-      state.primary = action.payload;
+      state.primaryColor = action.payload;
     },
     setSecondaryColor: (state, action) => {
-      state.secondary = action.payload;
+      state.secondaryColor = action.payload;
     },
   },
 });
