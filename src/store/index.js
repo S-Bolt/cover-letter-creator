@@ -5,6 +5,7 @@ import generatedCoverLetterReducer from "./slices/generatedCoverLetterSlice";
 import coverLetterFormReducer from "./slices/coverLetterFormSlice";
 import templateReducer from "./slices/templateSlice";
 import headerReducer from "./slices/headerSlice";
+import colorReducer from "./slices/colorSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     coverLetterForm: coverLetterFormReducer,
     template: templateReducer,
     header: headerReducer,
+    color: colorReducer,
   },
 });
 

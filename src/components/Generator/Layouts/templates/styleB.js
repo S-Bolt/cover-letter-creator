@@ -3,29 +3,13 @@ import { useSelector } from "react-redux";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 
-export default function LayoutB({ content }) {
+export default function LayoutB({ content, onCurrentDate }) {
   const { firstName, lastName, email, phoneNumber } = useSelector(
     (state) => state.header
   );
   const { jobTitle, companyName } = useSelector(
     (state) => state.coverLetterForm
   );
-
-  const currentDate = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
-  // Ensure paragraphs in `content` have spacing
-  const formattedContent = content
-    .split("\n")
-    .filter((paragraph) => paragraph.trim() !== "")
-    .map((paragraph, index) => (
-      <p key={index} className="mb-4 leading-relaxed">
-        {paragraph}
-      </p>
-    ));
 
   return (
     <div className="layout-b  grid grid-cols-[1fr_2fr] grid-rows-[auto_1fr]">
@@ -42,7 +26,7 @@ export default function LayoutB({ content }) {
       {/* Row 2, Column 1: Contact Info */}
       <div className="flex flex-col space-y-2 border-r border-r-gray-200 ">
         <div className="my-8 ml-8">
-          <p>{currentDate}</p>
+          <p>{onCurrentDate}</p>
           <p>{companyName}</p>
         </div>
         <p className="flex items-center  space-x-2 my-2 ml-8">
@@ -56,9 +40,9 @@ export default function LayoutB({ content }) {
       </div>
 
       {/* Row 2, Column 2: Cover Letter Content */}
-      <div className="col-span-1 ml-4">
+      <div className="col-span-1 mx-4">
         {/*LETTER */}
-        <div>{formattedContent}</div>
+        <div>{content}</div>
       </div>
     </div>
   );
