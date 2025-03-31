@@ -20,6 +20,8 @@ const traitsOptions = [
   "Dependable",
   "Ambitious",
   "Confident",
+  "Resourceful",
+  "Proactive",
 ];
 
 export default function YourTraits() {
@@ -29,16 +31,18 @@ export default function YourTraits() {
   return (
     <>
       <div>
-        <h2 className="mb-4 text-center">Select 3 traits that describe you</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-4">
+        <h2 className="mb-4 text-lg font-semibold text-center">
+          Select 3 traits that describe you
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-4 mb-4">
           {traitsOptions.map((trait, index) => (
             <button
               type="button"
               key={index}
               onClick={() => dispatch(toggleTrait(trait))}
-              className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg transition ${
+              className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition cursor-pointer ${
                 traits && traits.includes(trait)
-                  ? "bg-blue-500 text-white border-blue-500"
+                  ? "bg-primary text-white border-primary"
                   : "bg-white text-black"
               }`}
             >

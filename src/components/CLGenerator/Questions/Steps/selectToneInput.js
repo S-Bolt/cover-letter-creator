@@ -43,17 +43,17 @@ export default function SelectTone() {
     dispatch(updateField({ field: "tone", value: selectedTone }));
   }
   return (
-    <>
-      <h2>Select a tone</h2>
+    <div className="mb-8">
+      <h2 className="text-center text-lg mb-4">Select a tone</h2>
       <div className="grid grid-cols-3 gap-4">
         {toneOptions.map((toneOption, index) => (
           <button
             type="button"
             key={index}
             onClick={() => handleSelectTone(toneOption)}
-            className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg transition ${
+            className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition  ${
               tone.tone === toneOption.tone
-                ? "bg-blue-500 text-white border-blue-500"
+                ? "bg-primary text-white border-primary"
                 : "bg-white text-black"
             }`}
           >
@@ -61,6 +61,6 @@ export default function SelectTone() {
           </button>
         ))}
       </div>
-    </>
+    </div>
   );
 }

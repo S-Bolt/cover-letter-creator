@@ -9,7 +9,7 @@ import IncludeEducation from "./Steps/includeEducation";
 import JobInput from "./Steps/jobInput";
 import SkillsInput from "./Steps/skillsInput";
 import YourTraits from "./Steps/yourTraits";
-import ExtraInput from "./Steps/extraInput";
+import ExtraInput from "./Steps/additionalContext";
 import SelectTone from "./Steps/selectToneInput";
 import BackButton from "./QuestionsComponents/backButton";
 import NextButton from "./QuestionsComponents/nextButton";
@@ -75,7 +75,7 @@ export default function QuestionsForm() {
         className="bg-generator rounded-xl p-4 flex flex-col items-center"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-default text-lg sm:text-xl ">
+        <h2 className="text-default text-lg sm:text-2xl font-semibold ">
           Create Your Cover Letter
         </h2>
         <ProgressBar step={step} />
@@ -87,7 +87,13 @@ export default function QuestionsForm() {
         {step === 6 && <PersonalHeaderInput />}
         {step === 7 && <SelectTone />}
 
-        <div className=" flex justify-center space-x-77  mt-4 w-full">
+        <div
+          className={`flex ${
+            step === 7
+              ? "justify-between space-x-44"
+              : "justify-center space-x-77 w-full"
+          } mt-4`}
+        >
           {step > 1 && <BackButton onHandleBack={handleBack} />}
           {step < 7 && (
             <NextButton
@@ -95,7 +101,7 @@ export default function QuestionsForm() {
               className={`${step === 1 ? "ml-100" : ""}`}
             />
           )}
-          {step === 8 && <GenerateCLButton />}
+          {step === 7 && <GenerateCLButton />}
         </div>
       </form>
     </div>

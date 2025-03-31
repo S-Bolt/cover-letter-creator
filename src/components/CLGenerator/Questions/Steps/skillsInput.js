@@ -14,8 +14,8 @@ export default function SkillsInput() {
   return (
     <>
       <div>
-        <h2 className="block mb-2">
-          What top skills do you have for this job?
+        <h2 className="block mb-4 font-semibold text-lg text-center">
+          List three skills
         </h2>
         <Skill
           title={"Skill 1"}

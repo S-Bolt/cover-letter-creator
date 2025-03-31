@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useDispatch, useSelector } from "react-redux";
 import { updateField } from "@/store/slices/coverLetterFormSlice";
@@ -21,6 +22,9 @@ export default function JobInput() {
   return (
     <>
       <div>
+        <h2 className="text-center text-lg mb-4 font-semibold">
+          Enter informtion on job you're applying to.
+        </h2>
         <div className="sm:flex sm:flex-row space-x-4">
           <div>
             <label className="block text-sm text-gray-400">Job Title</label>
@@ -29,7 +33,7 @@ export default function JobInput() {
               name="jobTitle"
               value={jobTitle}
               onChange={handleChange}
-              className="bg-background py-2 mb-4 rounded-lg w-full"
+              className="bg-background py-2 mb-4 rounded-lg w-full pl-4"
               required
             />
           </div>
@@ -40,7 +44,7 @@ export default function JobInput() {
               name="companyName"
               value={companyName}
               onChange={handleChange}
-              className="bg-background py-2 mb-4 rounded-lg w-full"
+              className="bg-background py-2 mb-4 rounded-lg w-full pl-4"
               required
             />
           </div>
@@ -54,18 +58,20 @@ export default function JobInput() {
             name="jobDescription"
             value={jobDescription}
             onChange={handleChange}
-            className="bg-background py-2 mb-4 rounded-lg w-full"
+            className="bg-background py-2 mb-4 rounded-lg w-full pl-4"
             required
           />
         </div>
         <div className="flex justify-center mb-4">
           <div className="flex flex-col items-center">
-            <label className="block mb-4">Is this Position Remote?</label>
+            <label className="block mb-4 text-lg font-semibold">
+              Is this Position Remote?
+            </label>
             <div className="flex items-center space-x-6">
               <button
                 type="button"
                 onClick={() => handleRemote(true)}
-                className="bg-gray-400 p-3 rounded-full w-44 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className="bg-gray-400 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
                 <div className="space-x-3 text-xl">
                   <span>✅</span>
@@ -75,7 +81,7 @@ export default function JobInput() {
               <button
                 type="button"
                 onClick={() => handleRemote(false)}
-                className="bg-gray-400 p-3 rounded-full w-44 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className="bg-gray-400 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
                 <div className="space-x-3 text-xl">
                   <span>❌</span>
