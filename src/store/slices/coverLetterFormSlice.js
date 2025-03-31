@@ -14,7 +14,6 @@ const initialState = {
   education: "",
   school: "",
   major: "",
-  collegeExperience: "",
   tone: "",
   phoneNumber: "",
   firstName: "",

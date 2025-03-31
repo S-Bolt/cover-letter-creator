@@ -1,6 +1,6 @@
 "use client";
-import LargeGenerator from "@/components/Generator/largeGenerator";
-import MobileGenerator from "@/components/Generator/mobileGenerator";
+import LargeGenerator from "@/components/CLGenerator/largeGenerator";
+import MobileGenerator from "@/components/CLGenerator/mobileGenerator";
 import useWindowSize from "@/lib/hooks/useWindowSize";
 
 export default function CoverLetterGenerator() {

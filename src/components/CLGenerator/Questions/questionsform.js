@@ -6,7 +6,6 @@ import { setCoverLetter } from "@/store/slices/generatedCoverLetterSlice";
 import { useRouter } from "next/navigation";
 import LoadingScreen from "./Steps/loadingScreen";
 import IncludeEducation from "./Steps/includeEducation";
-import EducationInput from "./Steps/educationInput";
 import JobInput from "./Steps/jobInput";
 import SkillsInput from "./Steps/skillsInput";
 import YourTraits from "./Steps/yourTraits";
@@ -16,6 +15,7 @@ import BackButton from "./QuestionsComponents/backButton";
 import NextButton from "./QuestionsComponents/nextButton";
 import GenerateCLButton from "./QuestionsComponents/generateCLButton";
 import PersonalHeaderInput from "./Steps/personalHeaderInput";
+import ProgressBar from "./QuestionsComponents/progressBar";
 
 export default function QuestionsForm() {
   const dispatch = useDispatch();
@@ -70,24 +70,31 @@ export default function QuestionsForm() {
   }
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h2 className="text-center m-8">Step {step} of 7</h2>
+    <div className="p-6 flex justify-center  ">
       <form
-        className="bg-gray-400 rounded-xl p-4 flex flex-col items-center"
+        className="bg-generator rounded-xl p-4 flex flex-col items-center"
         onSubmit={handleSubmit}
       >
+        <h2 className="text-default text-lg sm:text-xl ">
+          Create Your Cover Letter
+        </h2>
+        <ProgressBar step={step} />
         {step === 1 && <IncludeEducation setStep={setStep} />}
-        {step === 2 && <EducationInput />}
-        {step === 3 && <JobInput />}
-        {step === 4 && <SkillsInput />}
-        {step === 5 && <YourTraits />}
-        {step === 6 && <ExtraInput />}
-        {step === 7 && <PersonalHeaderInput />}
-        {step === 8 && <SelectTone />}
+        {step === 2 && <JobInput />}
+        {step === 3 && <SkillsInput />}
+        {step === 4 && <YourTraits />}
+        {step === 5 && <ExtraInput />}
+        {step === 6 && <PersonalHeaderInput />}
+        {step === 7 && <SelectTone />}
 
-        <div className="flex justify-between mt-4">
+        <div className=" flex justify-center space-x-77  mt-4 w-full">
           {step > 1 && <BackButton onHandleBack={handleBack} />}
-          {step < 8 && <NextButton onHandleNext={handleNext} />}
+          {step < 7 && (
+            <NextButton
+              onHandleNext={handleNext}
+              className={`${step === 1 ? "ml-100" : ""}`}
+            />
+          )}
           {step === 8 && <GenerateCLButton />}
         </div>
       </form>

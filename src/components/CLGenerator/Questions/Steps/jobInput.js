@@ -23,7 +23,7 @@ export default function JobInput() {
       <div>
         <div className="sm:flex sm:flex-row space-x-4">
           <div>
-            <label className="block mb-4">Job Title</label>
+            <label className="block text-sm text-gray-400">Job Title</label>
             <input
               type="text"
               name="jobTitle"
@@ -34,7 +34,7 @@ export default function JobInput() {
             />
           </div>
           <div>
-            <label className="block mb-4">Company Name</label>
+            <label className="block text-sm text-gray-400">Company Name</label>
             <input
               type="text"
               name="companyName"
@@ -46,7 +46,9 @@ export default function JobInput() {
           </div>
         </div>
         <div>
-          <label className="block mb-4">Paste the Job Description</label>
+          <label className="block text-sm text-gray-400">
+            Paste the Job Description
+          </label>
           <textarea
             type="text"
             name="jobDescription"
@@ -57,26 +59,28 @@ export default function JobInput() {
           />
         </div>
         <div className="flex justify-center mb-4">
-          <div>
+          <div className="flex flex-col items-center">
             <label className="block mb-4">Is this Position Remote?</label>
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-6">
               <button
                 type="button"
                 onClick={() => handleRemote(true)}
-                className={`p-6 rounded-lg ${
-                  remote === true ? "bg-primary" : "bg-background"
-                }`}
+                className="bg-gray-400 p-3 rounded-full w-44 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
-                Yes
+                <div className="space-x-3 text-xl">
+                  <span>✅</span>
+                  <span>YES</span>
+                </div>
               </button>
               <button
                 type="button"
                 onClick={() => handleRemote(false)}
-                className={`p-6 rounded-lg ${
-                  remote === false ? "bg-primary" : "bg-background"
-                }`}
+                className="bg-gray-400 p-3 rounded-full w-44 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
-                No
+                <div className="space-x-3 text-xl">
+                  <span>❌</span>
+                  <span>No</span>
+                </div>
               </button>
             </div>
           </div>

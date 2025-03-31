@@ -5,7 +5,7 @@ import { updateField } from "@/store/slices/coverLetterFormSlice";
 
 export default function EducationInput() {
   const dispatch = useDispatch();
-  const { education, school, major, collegeExperience } = useSelector(
+  const { education, school, major } = useSelector(
     (state) => state.coverLetterForm
   );
 
@@ -17,14 +17,14 @@ export default function EducationInput() {
   return (
     <>
       <div>
-        <div>
-          <label className="block mb-4">
-            What is you highest level of education?
+        <div className="">
+          <label className="block text-sm text-gray-400">
+            Highest level of education?
           </label>
           <select
             type="text"
             name="education"
-            className="bg-background py-2 mb-4 rounded-lg"
+            className="bg-background py-2 mb-2 rounded-lg w-78 pl-3"
             value={education}
             onChange={handleChange}
           >
@@ -38,37 +38,23 @@ export default function EducationInput() {
           </select>
         </div>
         <div>
-          <label className="block mb-4">College</label>
+          <label className="block text-sm text-gray-400">College</label>
           <input
             type="text"
             name="school"
             value={school}
             onChange={handleChange}
-            className="bg-background py-2 mb-4 rounded-lg"
+            className="bg-background py-2 mb-2 rounded-lg w-78 pl-4"
           />
         </div>
         <div>
-          <label className="block mb-4">Major</label>
+          <label className="block text-sm text-gray-400">Major</label>
           <input
             type="text"
             name="major"
             value={major}
             onChange={handleChange}
-            className="bg-background py-2 mb-4 rounded-lg"
-          />
-        </div>
-        <div>
-          <label className="block mb-4">
-            Is there anything specific about your college experience that an
-            employer would find value in? Anything that prepared you for this
-            job?
-          </label>
-          <textarea
-            type="text"
-            name="collegeExperience"
-            value={collegeExperience}
-            onChange={handleChange}
-            className="bg-background py-2 mb-4 rounded-lg w-full"
+            className="bg-background py-2 mb-4 rounded-lg w-78 pl-4"
           />
         </div>
       </div>
