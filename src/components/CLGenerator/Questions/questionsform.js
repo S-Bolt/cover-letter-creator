@@ -96,7 +96,7 @@ export default function QuestionsForm() {
         <div
           className={`flex ${
             step === 7
-              ? "justify-between space-x-44"
+              ? "justify-between space-x-48"
               : "justify-center space-x-77 w-full"
           } mt-4`}
         >

@@ -24,7 +24,11 @@ export default function IncludeEducation({ setStep }) {
             aria-pressed={useEducation === true}
             aria-label="Yes, include education in the cover letter"
             onClick={() => handleUseEducation(true)}
-            className="bg-gray-300 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+            className={`p-3 rounded-full w-36 transition cursor-pointer ${
+              useEducation === true
+                ? "bg-gray-600"
+                : "bg-gray-300 hover:bg-gray-500"
+            }`}
           >
             <div className="space-x-3 text-xl">
               <span>✅</span>
@@ -36,7 +40,7 @@ export default function IncludeEducation({ setStep }) {
             aria-pressed={useEducation === false}
             aria-label="No, do not include education in the cover letter"
             onClick={() => handleUseEducation(false)}
-            className="bg-gray-300 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+            className="bg-gray-300 p-3 rounded-full w-36 hover:bg-gray-500  transition cursor-pointer"
           >
             <div className="space-x-3 text-xl">
               <span>❌</span>

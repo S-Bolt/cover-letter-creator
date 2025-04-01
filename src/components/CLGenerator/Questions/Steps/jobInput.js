@@ -88,7 +88,11 @@ export default function JobInput() {
                 aria-pressed={remote === true}
                 aria-label="Yes, this position is remote"
                 onClick={() => handleRemote(true)}
-                className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className={`p-3 rounded-full w-48 transition cursor-pointer ${
+                  remote === true
+                    ? "bg-gray-600"
+                    : "bg-gray-300 hover:bg-gray-500"
+                }`}
               >
                 <div className="space-x-3 text-xl">
                   <span>✅</span>
@@ -100,7 +104,11 @@ export default function JobInput() {
                 aria-pressed={remote === false}
                 aria-label="No, this position is not remote"
                 onClick={() => handleRemote(false)}
-                className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className={`p-3 rounded-full w-48 transition cursor-pointer ${
+                  remote === false
+                    ? "bg-gray-600"
+                    : "bg-gray-300 hover:bg-gray-500"
+                }`}
               >
                 <div className="space-x-3 text-xl">
                   <span>❌</span>
