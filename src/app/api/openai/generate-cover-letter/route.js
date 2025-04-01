@@ -53,6 +53,8 @@ Do not include a subject line.
 End the letter with a salutation that matches the tone use the acutal user's name if avialable
 ${formData.firstName || "[First Name]"} ${formData.lastName || "[Last Name]"}"
 Don't re-use content matierial from tone.prompt. Create your own joke content in a similar manner.
+Please end the cover letter with the phrase “[END]” so the client knows streaming is complete.
+
  `;
 
     console.log("Applicant Info Prompt:", customPrompt);
@@ -82,7 +84,7 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
     const readableStream = new ReadableStream({
       async start(controller) {
         try {
-          controller.enqueue(encoder.encode(""));
+          controller.enqueue(encoder.encode(" "));
           for await (const chunk of stream) {
             const content = chunk.choices?.[0]?.delta?.content || "";
             console.log("STREAMING CHUNK:", content);
@@ -91,6 +93,7 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
         } catch (e) {
           console.error("Stream error:", e);
         } finally {
+          console.log("✅ Finished streaming response");
           controller.close();
         }
       },
