@@ -65,13 +65,13 @@ export default function JobInput() {
         <div className="flex justify-center mb-4">
           <div className="flex flex-col items-center">
             <label className="block mb-4 text-lg font-semibold">
-              Is this Position Remote?
+              Is this position remote?
             </label>
             <div className="flex items-center space-x-6">
               <button
                 type="button"
                 onClick={() => handleRemote(true)}
-                className="bg-gray-400 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
                 <div className="space-x-3 text-xl">
                   <span>✅</span>
@@ -81,7 +81,7 @@ export default function JobInput() {
               <button
                 type="button"
                 onClick={() => handleRemote(false)}
-                className="bg-gray-400 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+                className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
                 <div className="space-x-3 text-xl">
                   <span>❌</span>

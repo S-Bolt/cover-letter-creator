@@ -20,7 +20,7 @@ export default function IncludeEducation({ setStep }) {
         <button
           type="button"
           onClick={() => handleUseEducation(true)}
-          className="bg-gray-400 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+          className="bg-gray-300 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
         >
           <div className="space-x-3 text-xl">
             <span>✅</span>
@@ -30,7 +30,7 @@ export default function IncludeEducation({ setStep }) {
         <button
           type="button"
           onClick={() => handleUseEducation(false)}
-          className="bg-gray-400 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
+          className="bg-gray-300 p-3 rounded-full w-36 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
         >
           <div className="space-x-3 text-xl">
             <span>❌</span>

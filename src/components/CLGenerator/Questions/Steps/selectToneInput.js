@@ -44,7 +44,7 @@ export default function SelectTone() {
   }
   return (
     <div className="mb-8">
-      <h2 className="text-center text-lg mb-4">Select a tone</h2>
+      <h2 className="text-center text-lg font-semibold mb-4">Select a tone</h2>
       <div className="grid grid-cols-3 gap-4">
         {toneOptions.map((toneOption, index) => (
           <button
