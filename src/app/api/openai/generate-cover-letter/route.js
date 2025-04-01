@@ -87,6 +87,7 @@ Please end the cover letter with the phrase “[END]” so the client knows stre
           controller.enqueue(encoder.encode(" "));
           for await (const chunk of stream) {
             const content = chunk.choices?.[0]?.delta?.content || "";
+            await new Promise((r) => setTimeout(r, 50));
             console.log("STREAMING CHUNK:", content);
             controller.enqueue(encoder.encode(content));
           }
