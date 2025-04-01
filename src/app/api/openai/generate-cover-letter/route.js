@@ -81,11 +81,18 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
     const encoder = new TextEncoder();
     const readableStream = new ReadableStream({
       async start(controller) {
-        for await (const chunk of stream) {
-          const content = chunk.choices?.[0]?.delta?.content || "";
-          controller.enqueue(encoder.encode(content));
+        try {
+          controller.enqueue(encoder.encode(""));
+          for await (const chunk of stream) {
+            const content = chunk.choices?.[0]?.delta?.content || "";
+            console.log("STREAMING CHUNK:", content);
+            controller.enqueue(encoder.encode(content));
+          }
+        } catch (e) {
+          console.error("Stream error:", e);
+        } finally {
+          controller.close();
         }
-        controller.close();
       },
     });
 
@@ -94,6 +101,7 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
         "Content-Type": "text/plain; charset=utf-8",
         "Cache-Control": "no-cache",
         Connection: "keep-alive",
+        "Transfer-Encoding": "chunked",
       },
     });
   } catch (error) {
