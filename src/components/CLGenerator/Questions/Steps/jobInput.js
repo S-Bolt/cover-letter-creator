@@ -11,23 +11,31 @@ export default function JobInput() {
 
   function handleChange(e) {
     const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
+
+    const capitalizeFields = ["jobTitle", "companyName"];
+
+    const formattedValue = capitalizeFields.includes(name)
+      ? value.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())
+      : value;
+
+    dispatch(updateField({ field: name, value: formattedValue }));
   }
 
   function handleRemote(answer) {
     dispatch(updateField({ field: "remote", value: answer }));
   }
 
-  console.log(remote);
   return (
     <>
-      <div>
-        <h2 className="text-center text-lg mb-4 font-semibold">
+      <fieldset>
+        <legend className="text-center text-lg mb-4 font-semibold">
           Enter informtion on job you're applying to.
-        </h2>
+        </legend>
         <div className="sm:flex sm:flex-row space-x-4">
           <div>
-            <label className="block text-sm text-gray-400">Job Title</label>
+            <label htmlFor="jobTitle" className="block text-sm text-gray-400">
+              Job Title
+            </label>
             <input
               type="text"
               name="jobTitle"
@@ -38,7 +46,12 @@ export default function JobInput() {
             />
           </div>
           <div>
-            <label className="block text-sm text-gray-400">Company Name</label>
+            <label
+              htmlFor="companyName"
+              className="block text-sm text-gray-400"
+            >
+              Company Name
+            </label>
             <input
               type="text"
               name="companyName"
@@ -50,11 +63,13 @@ export default function JobInput() {
           </div>
         </div>
         <div>
-          <label className="block text-sm text-gray-400">
+          <label
+            htmlFor="jobDescription"
+            className="block text-sm text-gray-400"
+          >
             Paste the Job Description
           </label>
           <textarea
-            type="text"
             name="jobDescription"
             value={jobDescription}
             onChange={handleChange}
@@ -70,6 +85,8 @@ export default function JobInput() {
             <div className="flex items-center space-x-6">
               <button
                 type="button"
+                aria-pressed={remote === true}
+                aria-label="Yes, this position is remote"
                 onClick={() => handleRemote(true)}
                 className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
@@ -80,6 +97,8 @@ export default function JobInput() {
               </button>
               <button
                 type="button"
+                aria-pressed={remote === false}
+                aria-label="No, this position is not remote"
                 onClick={() => handleRemote(false)}
                 className="bg-gray-300 p-3 rounded-full w-48 hover:bg-gray-500 active:bg-gray-600 transition cursor-pointer"
               >
@@ -91,7 +110,7 @@ export default function JobInput() {
             </div>
           </div>
         </div>
-      </div>
+      </fieldset>
     </>
   );
 }

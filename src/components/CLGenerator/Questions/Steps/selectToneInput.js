@@ -43,13 +43,21 @@ export default function SelectTone() {
     dispatch(updateField({ field: "tone", value: selectedTone }));
   }
   return (
-    <div className="mb-8">
-      <h2 className="text-center text-lg font-semibold mb-4">Select a tone</h2>
+    <fieldset className="mb-8">
+      <legend className="text-center text-lg font-semibold mb-4">
+        Select a tone
+      </legend>
       <div className="grid grid-cols-3 gap-4">
         {toneOptions.map((toneOption, index) => (
           <button
             type="button"
             key={index}
+            aria-pressed={tone.tone === toneOption.tone}
+            aria-label={
+              tone.tone === toneOption.tone
+                ? `${toneOption.tone}, selected`
+                : `${toneOption.tone}, not selected`
+            }
             onClick={() => handleSelectTone(toneOption)}
             className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition  ${
               tone.tone === toneOption.tone
@@ -61,6 +69,6 @@ export default function SelectTone() {
           </button>
         ))}
       </div>
-    </div>
+    </fieldset>
   );
 }

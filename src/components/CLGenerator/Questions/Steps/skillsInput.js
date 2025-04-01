@@ -13,10 +13,10 @@ export default function SkillsInput() {
 
   return (
     <>
-      <div>
-        <h2 className="block mb-4 font-semibold text-lg text-center">
+      <fieldset>
+        <legend className="block mb-4 font-semibold text-lg text-center">
           List three skills
-        </h2>
+        </legend>
         <Skill
           title={"Skill 1"}
           name={"skill1"}
@@ -35,7 +35,7 @@ export default function SkillsInput() {
           onHandleAddSkill={(e) => handleSkillChange(2, e.target.value)}
           value={skills[2]}
         />
-      </div>
+      </fieldset>
     </>
   );
 }

@@ -1,8 +1,11 @@
 export default function Skill({ title, name, value, onHandleAddSkill }) {
   return (
     <div className="flex flex-col">
-      <label className="block text-sm text-gray-400">{title}</label>
+      <label htmlFor={name} className="block text-sm text-gray-400">
+        {title}
+      </label>
       <input
+        id={name}
         type="text"
         name={name}
         value={value}

@@ -5,25 +5,32 @@ import { updateField } from "@/store/slices/coverLetterFormSlice";
 
 export default function EducationInput() {
   const dispatch = useDispatch();
-  const { education, school, major } = useSelector(
+  const { education, school, studyField } = useSelector(
     (state) => state.coverLetterForm
   );
 
   function handleChange(e) {
     const { name, value } = e.target;
-    dispatch(updateField({ field: name, value }));
+
+    const capitalizeFields = ["school", "studyField"];
+
+    let formattedValue = capitalizeFields.includes(name)
+      ? value.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())
+      : value;
+
+    dispatch(updateField({ field: name, value: formattedValue }));
   }
 
   return (
     <>
-      <div>
+      <fieldset>
         <div className="">
-          <label className="block text-sm text-gray-400">
+          <label htmlFor="education" className="block text-sm text-gray-400">
             Highest level of education?
           </label>
           <select
-            type="text"
             name="education"
+            id="education"
             className="bg-background py-2 mb-2 rounded-lg w-78 pl-3"
             value={education}
             onChange={handleChange}
@@ -38,8 +45,11 @@ export default function EducationInput() {
           </select>
         </div>
         <div>
-          <label className="block text-sm text-gray-400">College</label>
+          <label htmlFor="school" className="block text-sm text-gray-400">
+            College
+          </label>
           <input
+            id="school"
             type="text"
             name="school"
             value={school}
@@ -48,16 +58,18 @@ export default function EducationInput() {
           />
         </div>
         <div>
-          <label className="block text-sm text-gray-400">Major</label>
+          <label htmlFor="studyField" className="block text-sm text-gray-400">
+            Field of Study
+          </label>
           <input
             type="text"
-            name="major"
-            value={major}
+            name="studyField"
+            value={studyField}
             onChange={handleChange}
             className="bg-background py-2 mb-4 rounded-lg w-78 pl-4"
           />
         </div>
-      </div>
+      </fieldset>
     </>
   );
 }

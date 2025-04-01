@@ -13,7 +13,7 @@ const initialState = {
   useEducation: null,
   education: "",
   school: "",
-  major: "",
+  studyField: "",
   tone: "",
   phoneNumber: "",
   firstName: "",

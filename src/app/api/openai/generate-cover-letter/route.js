@@ -53,8 +53,6 @@ Do not include a subject line.
 End the letter with a salutation that matches the tone use the acutal user's name if avialable
 ${formData.firstName || "[First Name]"} ${formData.lastName || "[Last Name]"}"
 Don't re-use content matierial from tone.prompt. Create your own joke content in a similar manner.
-Please end the cover letter with the phrase “[END]” so the client knows streaming is complete.
-
  `;
 
     console.log("Applicant Info Prompt:", customPrompt);
@@ -87,7 +85,6 @@ Please end the cover letter with the phrase “[END]” so the client knows stre
           controller.enqueue(encoder.encode(" "));
           for await (const chunk of stream) {
             const content = chunk.choices?.[0]?.delta?.content || "";
-            await new Promise((r) => setTimeout(r, 50));
             console.log("STREAMING CHUNK:", content);
             controller.enqueue(encoder.encode(content));
           }

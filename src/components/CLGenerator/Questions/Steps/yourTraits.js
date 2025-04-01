@@ -30,15 +30,21 @@ export default function YourTraits() {
 
   return (
     <>
-      <div>
-        <h2 className="mb-4 text-lg font-semibold text-center">
+      <fieldset>
+        <legend className="mb-4 text-lg font-semibold text-center">
           Select 3 traits that describe you
-        </h2>
+        </legend>
         <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-4 mb-4">
           {traitsOptions.map((trait, index) => (
             <button
               type="button"
               key={index}
+              aria-pressed={traits && traits.includes(trait)}
+              aria-label={
+                traits && traits.includes(trait)
+                  ? `${trait}, selected`
+                  : `${trait}, not selected`
+              }
               onClick={() => dispatch(toggleTrait(trait))}
               className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition cursor-pointer ${
                 traits && traits.includes(trait)
@@ -50,7 +56,7 @@ export default function YourTraits() {
             </button>
           ))}
         </div>
-      </div>
+      </fieldset>
     </>
   );
 }
