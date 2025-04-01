@@ -59,7 +59,7 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
 
     const temperature = formData.tone.tone === "Oozing Rizz" ? 1.0 : 0.7;
 
-    const response = await openai.chat.completions.create({
+    const stream = await openai.chat.completions.create({
       model: "gpt-4",
       messages: [
         {
@@ -75,17 +75,29 @@ Don't re-use content matierial from tone.prompt. Create your own joke content in
       ],
       max_tokens: 400,
       temperature: temperature,
+      stream: true,
     });
 
-    // Adjust based on the response structure from your openai call
-    const coverLetter = response.choices[0].message.content;
+    const encoder = new TextEncoder();
+    const readableStream = new ReadableStream({
+      async start(controller) {
+        for await (const chunk of stream) {
+          const content = chunk.choices?.[0]?.delta?.content || "";
+          controller.enqueue(encoder.encode(content));
+        }
+        controller.close();
+      },
+    });
 
-    return new Response(JSON.stringify({ coverLetter }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
+    return new Response(readableStream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
     });
   } catch (error) {
-    console.error(error);
+    console.error("Streaming error:", error);
     return new Response(
       JSON.stringify({ error: "Failed to generate cover letter" }),
       { status: 500, headers: { "Content-Type": "application/json" } }

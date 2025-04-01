@@ -41,9 +41,15 @@ export default function QuestionsForm() {
       });
 
       if (response.ok) {
-        const data = await response.json();
-
-        dispatch(setCoverLetter(data.coverLetter));
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let coverLetter = "";
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          coverLetter += decoder.decode(value, { stream: true });
+          dispatch(setCoverLetter(coverLetter));
+        }
 
         router.push("/cover-letter-generator");
         setLoading(false);
