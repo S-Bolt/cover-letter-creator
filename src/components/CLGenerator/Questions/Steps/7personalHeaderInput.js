@@ -49,7 +49,7 @@ export default function PersonalHeaderInput() {
       </legend>
       <div>
         <div>
-          <label htmlFor="firstName" className="text-sm text-gray-400">
+          <label htmlFor="firstName" className="text-sm steps-form">
             First Name
           </label>
           <input
@@ -63,7 +63,7 @@ export default function PersonalHeaderInput() {
           />
         </div>
         <div>
-          <label htmlFor="lastName" className="text-sm text-gray-400">
+          <label htmlFor="lastName" className="text-sm steps-form">
             Last Name
           </label>
           <input
@@ -78,7 +78,7 @@ export default function PersonalHeaderInput() {
         </div>
 
         <div>
-          <label htmlFor="email" className="text-sm text-gray-400">
+          <label htmlFor="email" className="text-sm steps-form">
             Email
           </label>
           <input
@@ -92,7 +92,7 @@ export default function PersonalHeaderInput() {
           />
         </div>
         <div>
-          <label htmlFor="phoneNumber" className="text-sm text-gray-400">
+          <label htmlFor="phoneNumber" className="text-sm steps-form">
             Phone Number
           </label>
           <input

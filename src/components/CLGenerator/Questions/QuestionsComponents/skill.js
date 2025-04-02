@@ -1,7 +1,7 @@
 export default function Skill({ title, name, value, onHandleAddSkill }) {
   return (
     <div className="flex flex-col">
-      <label htmlFor={name} className="block text-sm text-gray-400">
+      <label htmlFor={name} className="block text-sm steps-form">
         {title}
       </label>
       <input

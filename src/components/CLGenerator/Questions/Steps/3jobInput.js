@@ -33,7 +33,7 @@ export default function JobInput() {
         </legend>
         <div className="sm:flex sm:flex-row space-x-4">
           <div>
-            <label htmlFor="jobTitle" className="block text-sm text-gray-400">
+            <label htmlFor="jobTitle" className="block text-sm steps-form">
               Job Title
             </label>
             <input
@@ -46,10 +46,7 @@ export default function JobInput() {
             />
           </div>
           <div>
-            <label
-              htmlFor="companyName"
-              className="block text-sm text-gray-400"
-            >
+            <label htmlFor="companyName" className="block text-sm steps-form">
               Company Name
             </label>
             <input
@@ -63,10 +60,7 @@ export default function JobInput() {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="jobDescription"
-            className="block text-sm text-gray-400"
-          >
+          <label htmlFor="jobDescription" className="block text-sm steps-form">
             Paste the Job Description
           </label>
           <textarea
@@ -89,14 +83,12 @@ export default function JobInput() {
                 aria-label="Yes, this position is remote"
                 onClick={() => handleRemote(true)}
                 className={`p-3 rounded-full w-48 transition cursor-pointer ${
-                  remote === true
-                    ? "bg-gray-600"
-                    : "bg-gray-300 hover:bg-gray-500"
+                  remote === true ? "bg-primary" : "bg-steps-button"
                 }`}
               >
                 <div className="space-x-3 text-xl">
                   <span>✅</span>
-                  <span>YES</span>
+                  <span>Yes</span>
                 </div>
               </button>
               <button
@@ -105,9 +97,7 @@ export default function JobInput() {
                 aria-label="No, this position is not remote"
                 onClick={() => handleRemote(false)}
                 className={`p-3 rounded-full w-48 transition cursor-pointer ${
-                  remote === false
-                    ? "bg-gray-600"
-                    : "bg-gray-300 hover:bg-gray-500"
+                  remote === false ? "bg-primary" : "bg-steps-button"
                 }`}
               >
                 <div className="space-x-3 text-xl">

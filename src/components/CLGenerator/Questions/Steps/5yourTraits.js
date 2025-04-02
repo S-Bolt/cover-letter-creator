@@ -46,7 +46,7 @@ export default function YourTraits() {
                   : `${trait}, not selected`
               }
               onClick={() => dispatch(toggleTrait(trait))}
-              className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition cursor-pointer ${
+              className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-primary-accent transition cursor-pointer ${
                 traits && traits.includes(trait)
                   ? "bg-primary text-white border-primary"
                   : "bg-white text-black"

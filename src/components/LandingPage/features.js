@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Features() {
   return (
     <div className="">
-      <div className="flex flex-col m-6 md:flex-row gap-8 md:gap-16 md:mt-12">
+      <div className="flex flex-col m-6 md:flex-row gap-8 md:gap-16 md:mt-14">
         {/* Indivdual Feature */}
 
         <div className="flex flex-col items-center text-center ">
@@ -17,7 +17,9 @@ export default function Features() {
               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full h-auto"
             />
           </div>
-          <h1 className="font-bold text-lg m-2">Tailored Specific to You</h1>
+          <h1 className="font-bold text-lg m-2">
+            Tailored Specifically to You
+          </h1>
           <p className="text-sm sm:text-base sm:mx-16 md:mx-0 ">
             Experience a cover letter that's uniquely yours. Our AI personalizes
             each letter based on your experience, skills, and the job you're
@@ -35,10 +37,12 @@ export default function Features() {
               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full h-auto"
             />
           </div>
-          <h1 className="font-bold text-lg m-2">Tailored Specific to You</h1>
+          <h1 className="font-bold text-lg m-2">
+            Tailored Specifically to You
+          </h1>
           <p className="text-sm sm:text-base sm:mx-16 md:mx-0">
             Experience a cover letter that's uniquely yours. Our AI personalizes
-            eachletter based onyour experience, skills, and the job you're
+            each letter based on your experience, skills, and the job you're
             targeting
           </p>
         </div>
@@ -53,10 +57,12 @@ export default function Features() {
               className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl w-full h-auto"
             />
           </div>
-          <h1 className="font-bold text-lg m-2">Tailored Specific to You</h1>
+          <h1 className="font-bold text-lg m-2">
+            Tailored Specifically to You
+          </h1>
           <p className="text-sm sm:text-base sm:mx-16 md:mx-0 ">
             Experience a cover letter that's uniquely yours. Our AI personalizes
-            eachletter based onyour experience, skills, and the job you're
+            eachletter based on your experience, skills, and the job you're
             targeting
           </p>
         </div>

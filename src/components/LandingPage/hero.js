@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <div className="bg-background text-default  lg:mx-8 xl:mx-16">
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:h-3/4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:min-h-screen">
         {/* Image Section */}
         <div className="lg:w-1/2 flex justify-center">
           <div className="w-56 sm:w-64 md:w-fit lg:w-fit">

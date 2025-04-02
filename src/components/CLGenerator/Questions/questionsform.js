@@ -5,16 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCoverLetter } from "@/store/slices/generatedCoverLetterSlice";
 import { useRouter } from "next/navigation";
 import LoadingScreen from "./Steps/loadingScreen";
-import IncludeEducation from "./Steps/includeEducation";
-import JobInput from "./Steps/jobInput";
-import SkillsInput from "./Steps/skillsInput";
-import YourTraits from "./Steps/yourTraits";
-import ExtraInput from "./Steps/additionalContext";
-import SelectTone from "./Steps/selectToneInput";
+import IncludeEducation from "./Steps/1includeEducation";
+import JobInput from "./Steps/3jobInput";
+import SkillsInput from "./Steps/4skillsInput";
+import YourTraits from "./Steps/5yourTraits";
+import ExtraInput from "./Steps/6additionalContext";
+import SelectTone from "./Steps/8selectToneInput";
 import BackButton from "./QuestionsComponents/backButton";
 import NextButton from "./QuestionsComponents/nextButton";
 import GenerateCLButton from "./QuestionsComponents/generateCLButton";
-import PersonalHeaderInput from "./Steps/personalHeaderInput";
+import PersonalHeaderInput from "./Steps/7personalHeaderInput";
 import ProgressBar from "./QuestionsComponents/progressBar";
 
 export default function QuestionsForm() {
@@ -78,7 +78,7 @@ export default function QuestionsForm() {
   return (
     <div className="p-6 flex justify-center  ">
       <form
-        className="bg-generator rounded-xl p-4 flex flex-col items-center"
+        className="bg-steps-card rounded-xl p-4 flex flex-col items-center"
         onSubmit={handleSubmit}
       >
         <h2 className="text-default text-lg sm:text-2xl font-semibold ">

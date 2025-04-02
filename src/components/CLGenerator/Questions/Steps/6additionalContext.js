@@ -26,7 +26,7 @@ export default function ExtraInput() {
           <div className="mb-4">
             <label
               htmlFor="yearsExperience"
-              className="block text-sm text-gray-400 pl-1 mb-1"
+              className="block text-sm steps-form pl-1 mb-1"
             >
               Years of experience?
             </label>
@@ -50,7 +50,7 @@ export default function ExtraInput() {
           <div className="mb-4">
             <label
               htmlFor="rightFit"
-              className="block text-sm text-gray-400 pl-1 mb-1"
+              className="block text-sm steps-form pl-1 mb-1"
             >
               Share 1–2 sentences about what excites you about this role.
             </label>
@@ -67,7 +67,7 @@ export default function ExtraInput() {
           <div className="mb-4">
             <label
               htmlFor="companyContributions"
-              className="block text-sm text-gray-400 pl-1 mb-1"
+              className="block text-sm steps-form pl-1 mb-1"
             >
               How do you envision contributing to the company's success?
             </label>

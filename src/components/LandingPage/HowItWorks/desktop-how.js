@@ -41,8 +41,8 @@ export default function DesktopHow() {
             Let <Rizz />
             Work Its Magic
           </h3>
-          <p className="text-defaulttext-center">
-            Our advanced AI tailors a profesional cover letter just for you.
+          <p className="text-default text-center">
+            Our advanced AI tailors a professional cover letter just for you.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function DesktopHow() {
           <h3 className="text-2xl font-semibold text-center mb-1">
             Review and Customize
           </h3>
-          <p className="text-defaulttext-center">
+          <p className="text-default text-center">
             Make any changes to ensure your letter perfectly reflects your voice
           </p>
         </div>
@@ -75,11 +75,11 @@ export default function DesktopHow() {
         </div>
         <div className="w-5/6  mb-4">
           <h3 className="text-2xl font-semibold text-center mb-1">
-            Seal the Deal
+            Make it Official
           </h3>
           <p className="text-default text-center">
             Download your ready-to-use cover letter and start landing those
-            inverviews
+            interviews
           </p>
         </div>
 

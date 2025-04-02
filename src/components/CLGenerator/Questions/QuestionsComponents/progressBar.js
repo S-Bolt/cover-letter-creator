@@ -6,7 +6,7 @@ export default function ProgressBar({ step }) {
         <div
           key={index}
           className={`h-6 w-15 rounded-full transition-colors duration-500 ${
-            step > index ? "bg-primary" : "bg-gray-200"
+            step > index ? "bg-primary" : "bg-steps-progress"
           } `}
         ></div>
       ))}

@@ -77,8 +77,49 @@
 .dark .bg-test-card {
   background-color: var(--color-text);
 }
+/* Steps Dark Mode Section */
+.bg-steps-card {
+  background-color: var(--color-generator);
+}
 
-body {
+.dark .bg-steps-card {
+  background-color: var(--color-generator-dark);
+}
+
+.bg-steps-progress {
+  background-color: var(--color-gray-200);
+}
+.dark .bg-steps-progress {
+  background-color: var(--color-background-dark);
+}
+
+.bg-steps-button {
+  background-color: var(--color-gray-200);
+}
+
+.bg-steps-button:hover {
+  background-color: var(--color-gray-400);
+}
+
+.dark .bg-steps-button {
+  background-color: var(--color-gray-600);
+}
+
+.dark .bg-steps-button:hover {
+  background-color: var(--color-gray-700);
+}
+
+.steps-form {
+  color: var(--color-gray-600);
+}
+
+.dark .steps-form {
+  color: var(--color-gray-200);
+}
+
+/* END Steps Dark Mode Section */
+
+.dark .bg-test-card body {
   background-color: var(--color-background);
   color: var(--color-text);
 }

@@ -59,7 +59,7 @@ export default function SelectTone() {
                 : `${toneOption.tone}, not selected`
             }
             onClick={() => handleSelectTone(toneOption)}
-            className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-orange-200 transition  ${
+            className={`text-xs sm:text-base px-1 sm:px-4 py-2 border rounded-lg hover:bg-primary-accent transition  ${
               tone.tone === toneOption.tone
                 ? "bg-primary text-white border-primary"
                 : "bg-white text-black"

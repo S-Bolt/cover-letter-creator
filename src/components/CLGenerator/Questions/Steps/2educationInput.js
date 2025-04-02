@@ -25,7 +25,7 @@ export default function EducationInput() {
     <>
       <fieldset>
         <div className="">
-          <label htmlFor="education" className="block text-sm text-gray-400">
+          <label htmlFor="education" className="block text-sm steps-form">
             Highest level of education?
           </label>
           <select
@@ -45,7 +45,7 @@ export default function EducationInput() {
           </select>
         </div>
         <div>
-          <label htmlFor="school" className="block text-sm text-gray-400">
+          <label htmlFor="school" className="block text-sm steps-form">
             College
           </label>
           <input
@@ -58,7 +58,7 @@ export default function EducationInput() {
           />
         </div>
         <div>
-          <label htmlFor="studyField" className="block text-sm text-gray-400">
+          <label htmlFor="studyField" className="block text-sm steps-form">
             Field of Study
           </label>
           <input
