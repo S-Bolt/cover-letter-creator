@@ -18,9 +18,9 @@ export default function ColorSelectorModal({ onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black/90  flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+      <div className="bg-background p-6 rounded-lg shadow-lg w-96">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold">Select Colors</h2>
+          <h2 className="text-lg font-bold text-default">Select Colors</h2>
           <button onClick={onClose}>
             <XMarkIcon className="h-6 w-6" />
           </button>
@@ -49,14 +49,16 @@ export default function ColorSelectorModal({ onClose }) {
         />
 
         <button>
-          <div className="outerColor relative w-16 h-16 border border-black rounded-full flex justify-center items-center">
+          <div className="outerColor relative w-16 h-16 border bg-white border-black rounded-full flex justify-center items-center">
             <div className="innerColor w-8 h-8 border border-black rounded-full bg-blue-200"></div>
           </div>
         </button>
 
         {/* Primary Color Picker */}
         <div className="mb-4">
-          <label className="block text-sm font-medium">Primary Color</label>
+          <label className="block text-sm font-medium text-default">
+            Primary Color
+          </label>
           <input
             type="color"
             value={primaryColor}
@@ -67,7 +69,9 @@ export default function ColorSelectorModal({ onClose }) {
 
         {/* Secondary Color Picker */}
         <div className="mb-4">
-          <label className="block text-sm font-medium">Secondary Color</label>
+          <label className="block text-sm font-medium text-default">
+            Secondary Color
+          </label>
           <input
             type="color"
             value={secondaryColor}

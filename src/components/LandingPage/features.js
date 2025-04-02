@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Features() {
   return (
     <div className="">
-      <div className="flex flex-col m-6 md:flex-row gap-8 md:gap-16 md:mt-14">
+      <div className="flex flex-col m-6 md:flex-row gap-8 md:gap-16 md:mt-8">
         {/* Indivdual Feature */}
 
         <div className="flex flex-col items-center text-center ">

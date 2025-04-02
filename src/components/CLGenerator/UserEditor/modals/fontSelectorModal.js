@@ -18,16 +18,16 @@ export default function FontSelectorModal({ onClose }) {
   ];
   return (
     <div className="fixed inset-0 bg-black/90  flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+      <div className="bg-background p-6 rounded-lg shadow-lg w-96">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-bold">Choose a Font</h2>
+          <h2 className="text-lg font-bold text-default">Choose a Font</h2>
           <button onClick={onClose}>
-            <XMarkIcon className="h-6 w-6" />
+            <XMarkIcon className="h-6 w-6 text-default" />
           </button>
         </div>
         {/* Dropdown for Font Selection */}
         <select
-          className="w-full p-2 border rounded-md mb-4"
+          className="w-full p-2 border rounded-md mb-4 text-default bg-background"
           value={selectedFont}
           onChange={(e) => dispatch(setSelectedFontStyle(e.target.value))}
         >

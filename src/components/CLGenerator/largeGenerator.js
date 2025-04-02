@@ -11,7 +11,7 @@ export default function LargeGenerator() {
   const sidebar = useSelector((state) => state.sidebar.sidebar);
   const dispatch = useDispatch();
   return (
-    <div className="bg-background text-default min-h-screen flex flex-col h-screen ">
+    <div className="bg-background text-black min-h-screen flex flex-col h-screen ">
       <Navbar />
 
       <div className="grid grid-cols-20 grid-rows-1 gap-4 p-4 mt-8 flex-grow w-full  h-full min-h-0 ">
