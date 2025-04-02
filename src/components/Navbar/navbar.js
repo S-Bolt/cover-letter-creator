@@ -29,9 +29,7 @@ export default function Navbar() {
         <div>
           <Link href={"/"}>
             <span className="text-default font-serif ">CL</span>
-            <span className="text-primary font-leckerli dark:text-white font-sans">
-              Rizz
-            </span>
+            <span className="text-primary font-leckerli font-sans">Rizz</span>
           </Link>
         </div>
         <div className="flex justify-between items-center space-x-2 sm:space-x-8 md:space-x-8 lg:space-x-16 xl:space-x-24 xs-flex-col ">

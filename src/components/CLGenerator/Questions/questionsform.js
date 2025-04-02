@@ -76,7 +76,7 @@ export default function QuestionsForm() {
   }
 
   return (
-    <div className="p-6 flex justify-center  ">
+    <div className="p-6 flex justify-center h-min-screen  ">
       <form
         className="bg-steps-card rounded-xl p-4 flex flex-col items-center"
         onSubmit={handleSubmit}
