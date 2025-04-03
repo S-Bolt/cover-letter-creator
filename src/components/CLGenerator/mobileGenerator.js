@@ -6,9 +6,21 @@ import Document from "@/components/CLGenerator/Layouts/document";
 import Editor from "@/components/CLGenerator/UserEditor/editor";
 import Navbar from "../Navbar/navbar";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import SmallSidebar from "./Sidebar/smallSidebar";
+import { downloadCoverLetterAsPDF } from "@/lib/download";
 
 export default function MobileGenerator() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownload = () => {
+    setDownloading(true);
+    downloadCoverLetterAsPDF();
+    setTimeout(() => {
+      setDownloading(false);
+    }, 4500);
+  };
 
   return (
     <div className="flex flex-col h-screen">
@@ -31,8 +43,12 @@ export default function MobileGenerator() {
 
       {/* Sidebar (Opens on Button Click) */}
       {sidebarOpen && (
-        <div className="fixed top-56 left-0 w-3/4 h-full bg-cl-generator z-40">
-          <Sidebar onSetSidebar={() => setSidebarOpen(false)} />
+        <div className="fixed top-56 left-0 w-1/2 h-full bg-cl-generator z-40">
+          <SmallSidebar
+            onDownload={handleDownload}
+            downloading={downloading}
+            onSetSidebar={() => setSidebarOpen(false)}
+          />
         </div>
       )}
     </div>

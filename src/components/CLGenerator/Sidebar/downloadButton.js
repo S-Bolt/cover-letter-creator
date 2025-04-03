@@ -1,12 +1,14 @@
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
 import { useSelector } from "react-redux";
+import useWindowSize from "@/lib/hooks/useWindowSize";
 
 export default function DownloadButton({ onDownload, downloading }) {
+  const width = useWindowSize();
   const { sidebar } = useSelector((state) => state.sidebar);
+
   return (
     <div className="w-full flex flex-col items-center">
-      {sidebar === "large" ? (
+      {sidebar === "large" && width > 640 ? (
         <>
           <button
             onClick={onDownload}
