@@ -15,7 +15,7 @@ export default function DownloadButton({ onDownload, downloading }) {
             className="flex items-center pl-[15%] w-full"
           >
             <ArrowDownTrayIcon className="h-5 w-5 mr-2" />
-            <div className="flex-grow px-2 py-4 hover:bg-primary-accent rounded-l-lg drop-shadow-lg hover:text-primary">
+            <div className="flex-grow px-2 py-4 border border-primary-accent hover:bg-primary-accent rounded-l-lg drop-shadow-lg hover:text-primary">
               <span className="text-sm font-semibold">
                 {downloading ? "DOWNLOADING..." : "DOWNLOAD"}
               </span>

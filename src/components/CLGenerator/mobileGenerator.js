@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Sidebar from "./Sidebar/sidebar";
-import Document from "@/components/CLGenerator/Layouts/document";
+import Document from "@/components/CLGenerator/document";
 import Editor from "@/components/CLGenerator/UserEditor/editor";
 import Navbar from "../Navbar/navbar";
 import { Bars3Icon } from "@heroicons/react/24/solid";

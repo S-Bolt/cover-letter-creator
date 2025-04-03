@@ -1,7 +1,7 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar } from "@/store/slices/sidebarSlice";
-import Document from "@/components/CLGenerator/Layouts/document";
+import Document from "@/components/CLGenerator/document";
 import Editor from "@/components/CLGenerator/UserEditor/editor";
 import Sidebar from "./Sidebar/sidebar";
 import Navbar from "@/components/Navbar/navbar";
