@@ -13,8 +13,9 @@ import {
   ArrowDownTrayIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/24/solid";
+import DownloadButton from "./downloadButton";
 
-export default function SmallSidebar() {
+export default function SmallSidebar({ onDownload, downloading }) {
   const dispatch = useDispatch();
   return (
     <aside className="bg-cl-generator col-span-2  rounded-xl border-r-6 border-primary-accent">
@@ -26,12 +27,12 @@ export default function SmallSidebar() {
           <SmallSidebarButtons icon={BookmarkSquareIcon} />
           <SmallSidebarButtons icon={QuestionMarkCircleIcon} />
           <SmallSidebarButtons icon={UserCircleIcon} />
-          <SmallSidebarButtons icon={ArrowDownTrayIcon} />
+          <DownloadButton onDownload={onDownload} downloading={downloading} />
 
           <div className="flex justify-center w-full mt-auto mb-4">
             <button
               onClick={() => dispatch(toggleSidebar())}
-              className="h-12 w-12 bg-generator-buttons rounded-full flex items-center justify-center drop-shadow-lg"
+              className="h-8 w-8 bg-generator-buttons rounded-full flex items-center justify-center drop-shadow-lg"
             >
               <ChevronDoubleRightIcon className="h-6 w-6 text-default" />
             </button>
